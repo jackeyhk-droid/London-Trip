@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>倫敦七日 — 博物館、教堂與一千年的歷史</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Noto+Serif+TC:wght@400;500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ground:#1C3B2E;
+  --ground-deep:#11271E;
+  --ground-line:#37604D;
+  --ground-soft:#BFD2C4;
+  --ground-mute:#8EA897;
+  --gold:#C9A94B;
+  --linen:#EDE3CC;
+  --linen-2:#E2D5B8;
+  --linen-3:#D8C9A6;
+  --line:#3E2E1E;
+  --text:#2E2418;
+  --text-soft:#6A5B45;
+
+  --d1:#A8392A;
+  --d2:#2C4A6E;
+  --d3:#6C7C46;
+  --d4:#B3862A;
+  --d5:#6E4557;
+  --d6:#2F6E63;
+  --d7:#7A4A26;
+
+  --display:"Cardo","Noto Serif TC",Georgia,serif;
+  --body:"Noto Serif TC","Cardo",Georgia,serif;
+  --ui:"Noto Sans TC",system-ui,-apple-system,"Helvetica Neue",sans-serif;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--ground);
+  background-image:
+    url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='76' height='76'><g fill='none' stroke='%23F0E6CE' stroke-opacity='.075' stroke-width='1.1'><path d='M38 4 L72 38 L38 72 L4 38 Z'/><path d='M0 0 L4 4 M72 4 L76 0 M0 76 L4 72 M72 72 L76 76'/></g><g fill='%23F0E6CE' fill-opacity='.07'><circle cx='38' cy='38' r='2.6'/><circle cx='0' cy='38' r='1.7'/><circle cx='76' cy='38' r='1.7'/><circle cx='38' cy='0' r='1.7'/><circle cx='38' cy='76' r='1.7'/></g></svg>"),
+    linear-gradient(180deg,var(--ground-deep) 0%,var(--ground) 460px);
+  color:var(--text);
+  font-family:var(--body);
+  font-size:16px;
+  line-height:1.75;
+}
+.sheet{max-width:1080px;margin:0 auto;padding:28px 18px 64px}
+
+/* ---------- hero ---------- */
+.hero{margin-bottom:22px}
+.frieze-wrap{
+  background:var(--linen);
+  border:1px solid #4A3A26;
+  overflow-x:auto;
+  overflow-y:hidden;
+  -webkit-overflow-scrolling:touch;
+}
+.frieze{display:block;width:100%;height:auto}
+@media (max-width:760px){ .frieze{min-width:760px} }
+.swipe-hint{
+  display:none;font-family:var(--ui);font-size:12px;color:var(--ground-mute);
+  padding:6px 2px 0;letter-spacing:.04em;
+}
+@media (max-width:760px){ .swipe-hint{display:block} .lat,.num{display:none} }
+
+.hero-text{padding:26px 4px 0;color:var(--linen)}
+h1{
+  font-family:var(--display);
+  font-weight:700;
+  font-size:clamp(34px,6.4vw,60px);
+  line-height:1.12;
+  margin:0;
+  letter-spacing:.02em;
+}
+.hero-sub{
+  font-family:var(--display);
+  font-size:clamp(17px,2.4vw,23px);
+  color:var(--gold);
+  margin:10px 0 0;
+  font-style:italic;
+}
+.lede{
+  max-width:62ch;
+  color:#C2D5C8;
+  font-size:15.5px;
+  margin:18px 0 0;
+}
+
+/* ---------- stat rail ---------- */
+.rail{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--ground-line);border-bottom:1px solid var(--ground-line);
+  margin:24px 0 22px;
+}
+.rail div{padding:14px 10px;border-right:1px solid var(--ground-line);text-align:center}
+.rail div:last-child{border-right:0}
+.rail b{display:block;font-family:var(--display);font-size:30px;font-weight:700;color:var(--linen);line-height:1}
+.rail span{display:block;font-family:var(--ui);font-size:12px;color:var(--ground-mute);margin-top:6px;letter-spacing:.05em}
+@media (max-width:560px){
+  .rail{grid-template-columns:repeat(2,1fr)}
+  .rail div:nth-child(2){border-right:0}
+  .rail div:nth-child(1),.rail div:nth-child(2){border-bottom:1px solid var(--ground-line)}
+}
+
+/* ---------- alert ---------- */
+.alert{
+  background:var(--linen);
+  border-left:7px solid var(--d1);
+  padding:16px 20px;
+  margin-bottom:26px;
+}
+.alert h2{font-family:var(--display);font-size:19px;margin:0 0 6px;font-weight:700}
+.alert p{margin:0;font-size:15px}
+.alert .count{color:var(--d1);font-weight:700}
+
+/* ---------- section nav ---------- */
+.nav{display:flex;flex-wrap:wrap;gap:2px;margin-bottom:0}
+.nav button{
+  font-family:var(--ui);font-size:14px;font-weight:500;
+  background:#204636;color:var(--ground-soft);border:1px solid var(--ground-line);border-bottom:none;
+  padding:11px 17px;cursor:pointer;
+}
+.nav button:hover{color:var(--linen)}
+.nav button[aria-selected="true"]{background:var(--linen);color:var(--text);border-color:#4A3A26;box-shadow:inset 0 3px 0 var(--gold)}
+.nav button:focus-visible{outline:2px solid var(--gold);outline-offset:-3px}
+
+.panel{background:var(--linen);border:1px solid #4A3A26;padding:26px 26px 30px}
+@media (max-width:560px){ .panel{padding:20px 16px 24px} }
+
+.view{display:none}
+.view.is-on{display:block}
+
+h3{font-family:var(--display);font-size:23px;font-weight:700;margin:0 0 4px;letter-spacing:.01em}
+.sub{font-family:var(--ui);font-size:13.5px;color:var(--text-soft);margin:0 0 20px}
+h4{font-family:var(--display);font-size:18px;margin:26px 0 8px;font-weight:700}
+p{margin:0 0 12px}
+a{color:var(--d2)}
+
+/* ---------- map ---------- */
+.mapblock{margin:0 0 26px}
+.mapwrap{border:1px solid var(--linen-3);overflow-x:auto;-webkit-overflow-scrolling:touch;background:#EDE3CC}
+.map{display:block;width:100%;height:auto}
+@media (max-width:720px){ .map{min-width:700px} }
+.map .dist{font-family:var(--display);font-size:13px;letter-spacing:.22em;fill:#9C8E72;text-anchor:middle}
+.map .water{font-family:var(--display);font-style:italic;font-size:15px;letter-spacing:.14em;fill:#5C8496;text-anchor:middle}
+.map .sm{font-family:var(--ui);font-size:11px;fill:#7C6C52}
+.map .mlab{
+  display:none;font-family:var(--body);font-size:13.5px;font-weight:500;fill:var(--text);
+  paint-order:stroke;stroke:#EDE3CC;stroke-width:4px;stroke-linejoin:round;
+}
+.map .mk circle{transition:opacity .18s}
+.map.dayon .mk{opacity:.2}
+.map.dayon .mk.on{opacity:1}
+.map .mk.on .mlab{display:block}
+.map .route{display:none}
+.map .route.on{display:block}
+.mapnote{font-family:var(--ui);font-size:12.5px;color:var(--text-soft);margin:9px 2px 0}
+.mob{display:none}
+@media (max-width:720px){ .mob{display:inline} }
+
+/* ---------- week overview ---------- */
+.week{width:100%;min-width:520px}
+.week td{text-align:left;font-family:var(--body);font-size:15px;vertical-align:top}
+.week tbody tr{cursor:pointer}
+.week .wd{font-family:var(--display);font-weight:700;font-size:16px;white-space:nowrap}
+.week .wk{font-family:var(--ui);font-size:13px;color:var(--text-soft);white-space:nowrap}
+.week .dotcell{width:22px;padding-right:0}
+.week .dotcell i{display:inline-block;width:11px;height:11px;border-radius:50%;border:2px solid var(--line)}
+
+/* ---------- day tabs ---------- */
+.daytabs{display:flex;gap:0;border-bottom:1px solid var(--linen-3);margin-bottom:0;overflow-x:auto}
+.daytabs button{
+  flex:1 0 auto;min-width:64px;
+  font-family:var(--ui);font-size:13px;background:none;border:none;
+  border-bottom:4px solid transparent;padding:9px 6px 8px;cursor:pointer;color:var(--text-soft);
+}
+.daytabs button b{display:block;font-family:var(--display);font-size:19px;color:var(--text);font-weight:700}
+.daytabs button[data-day="1"] b{color:var(--d1)}
+.daytabs button[data-day="2"] b{color:var(--d2)}
+.daytabs button[data-day="3"] b{color:var(--d3)}
+.daytabs button[data-day="4"] b{color:var(--d4)}
+.daytabs button[data-day="5"] b{color:var(--d5)}
+.daytabs button[data-day="6"] b{color:var(--d6)}
+.daytabs button[data-day="7"] b{color:var(--d7)}
+.daytabs button[data-day="0"][aria-selected="true"]{border-bottom-color:var(--line)}
+.daytabs button[aria-selected="true"]{color:var(--text)}
+.daytabs button:focus-visible{outline:2px solid var(--d2);outline-offset:-3px}
+.daytabs button[data-day="1"][aria-selected="true"]{border-bottom-color:var(--d1)}
+.daytabs button[data-day="2"][aria-selected="true"]{border-bottom-color:var(--d2)}
+.daytabs button[data-day="3"][aria-selected="true"]{border-bottom-color:var(--d3)}
+.daytabs button[data-day="4"][aria-selected="true"]{border-bottom-color:var(--d4)}
+.daytabs button[data-day="5"][aria-selected="true"]{border-bottom-color:var(--d5)}
+.daytabs button[data-day="6"][aria-selected="true"]{border-bottom-color:var(--d6)}
+.daytabs button[data-day="7"][aria-selected="true"]{border-bottom-color:var(--d7)}
+
+.showall{
+  font-family:var(--ui);font-size:12.5px;background:none;border:1px solid var(--linen-3);
+  color:var(--text-soft);padding:5px 12px;cursor:pointer;margin:16px 0 0;
+}
+.showall:hover{border-color:var(--text-soft);color:var(--text)}
+
+.day{display:none;padding-top:22px}
+.day.is-on{display:block}
+.days.all .day{display:block;border-top:1px solid var(--linen-3);margin-top:8px}
+.days.all .day:first-of-type{border-top:none}
+
+.dayhead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px}
+.daynum{font-family:var(--display);font-size:15px;font-weight:700;letter-spacing:.14em}
+.dayarea{font-family:var(--ui);font-size:13px;color:var(--text-soft)}
+.daywhy{font-size:15px;max-width:60ch;margin:6px 0 20px;color:#4C3F2D}
+
+/* ---------- timeline ---------- */
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:flex;gap:0;align-items:flex-start;padding:0}
+.tl .t{
+  flex:0 0 62px;font-family:var(--ui);font-size:13px;font-variant-numeric:tabular-nums;
+  color:var(--text-soft);padding:12px 0 12px;
+}
+.tl .stem{flex:0 0 22px;position:relative;align-self:stretch}
+.tl .stem::before{
+  content:"";position:absolute;left:10px;top:0;bottom:0;width:1px;background:var(--linen-3);
+}
+.tl li:first-child .stem::before{top:19px}
+.tl li:last-child .stem::before{bottom:calc(100% - 19px)}
+.tl .stem::after{
+  content:"";position:absolute;left:5.5px;top:14px;width:11px;height:11px;border-radius:50%;
+  background:var(--linen);border:2.5px solid var(--dot,var(--text-soft));
+}
+.tl .body{flex:1 1 auto;padding:11px 0 11px 12px}
+.tl .name{font-family:var(--display);font-size:17.5px;font-weight:700;line-height:1.4}
+.tl .en{font-family:var(--display);font-size:14px;color:var(--text-soft);font-style:italic;margin-left:7px;font-weight:400}
+.tl .note{font-size:14.5px;color:#4C3F2D;margin-top:2px}
+.tl .free{
+  font-family:var(--ui);font-size:11px;color:var(--d3);border:1px solid var(--d3);
+  padding:1px 5px;margin-left:8px;vertical-align:2px;white-space:nowrap;
+}
+@media (max-width:560px){
+  .tl .t{flex:0 0 50px;font-size:12px}
+  .tl .name{font-size:16px}
+  .tl .en{display:block;margin-left:0}
+}
+
+.tip{
+  background:var(--linen-2);border-left:4px solid var(--dot,var(--text-soft));
+  padding:13px 16px;margin-top:20px;font-size:14.5px;
+}
+.tip b{font-family:var(--display)}
+
+/* ---------- opening matrix ---------- */
+.matrix-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;min-width:640px;font-family:var(--ui);font-size:13.5px}
+th,td{padding:9px 8px;text-align:center;border-bottom:1px solid var(--linen-3)}
+thead th{font-weight:500;color:var(--text-soft);font-size:12.5px;border-bottom:1.5px solid var(--line)}
+tbody th{text-align:left;font-weight:500;font-family:var(--body);font-size:14.5px;white-space:nowrap}
+td.o{color:var(--d3);font-size:15px}
+td.l{color:var(--d4);font-size:15px}
+td.x{color:#AA9E86;font-size:15px}
+tbody tr:hover{background:var(--linen-2)}
+.legend{font-family:var(--ui);font-size:12.5px;color:var(--text-soft);margin-top:12px;display:flex;gap:18px;flex-wrap:wrap}
+.legend i{font-style:normal}
+.legend .o{color:var(--d3)} .legend .l{color:var(--d4)} .legend .x{color:#AA9E86}
+
+/* ---------- cost ---------- */
+.cost{list-style:none;margin:0;padding:0;max-width:560px}
+.cost li{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--linen-3)}
+.cost input{width:17px;height:17px;accent-color:var(--d1);flex:0 0 auto;cursor:pointer}
+.cost label{flex:1 1 auto;cursor:pointer;font-size:15.5px}
+.cost .p{font-family:var(--ui);font-variant-numeric:tabular-nums;font-size:15px;color:var(--text-soft)}
+.total{
+  display:flex;justify-content:space-between;align-items:baseline;max-width:560px;
+  margin-top:16px;padding-top:14px;border-top:2px solid var(--line);
+}
+.total span{font-family:var(--ui);font-size:13.5px;color:var(--text-soft)}
+.total b{font-family:var(--display);font-size:34px;font-weight:700;font-variant-numeric:tabular-nums}
+
+.freelist{columns:2;column-gap:32px;font-size:15px;margin:0;padding-left:20px}
+.freelist li{margin-bottom:5px;break-inside:avoid}
+@media (max-width:560px){ .freelist{columns:1} }
+
+/* ---------- food ---------- */
+.foodgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(360px,1fr));gap:1px;background:var(--linen-3);border:1px solid var(--linen-3)}
+.foodgrid article{background:var(--linen);padding:17px 18px 19px}
+.foodgrid h5{font-family:var(--display);font-size:17.5px;font-weight:700;margin:0 0 5px;line-height:1.35}
+.foodgrid h5 em{font-family:var(--display);font-style:italic;font-weight:400;font-size:14px;color:var(--text-soft);display:block}
+.foodgrid .meta{display:flex;gap:7px;flex-wrap:wrap;align-items:center;font-family:var(--ui);font-size:11.5px;margin-bottom:9px}
+.foodgrid .meta span{color:var(--text-soft)}
+.foodgrid .meta .band{color:var(--d1);letter-spacing:.06em}
+.foodgrid .meta .tag{border:1px solid var(--linen-3);padding:1px 6px;color:var(--text-soft)}
+.foodgrid .meta .star{color:#8A6A1C;font-weight:500}
+.foodgrid p{font-size:14.5px;margin:0;color:#4C3F2D}
+.pair td{text-align:left}
+.pair td:first-child{white-space:nowrap;font-family:var(--display);font-weight:700}
+.maprow{display:flex;gap:14px;align-items:flex-start;flex-wrap:wrap;margin-top:9px}
+.maprow .mapnote{flex:1 1 300px;margin:0}
+.maprow .showall{margin:0;flex:0 0 auto}
+.map .rest path{transition:opacity .18s}
+
+/* ---------- stay ---------- */
+.stay{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1px;background:var(--linen-3);border:1px solid var(--linen-3)}
+.stay article{background:var(--linen);padding:18px 18px 20px}
+.stay h4{margin:0 0 2px;font-size:17.5px}
+.stay .band{font-family:var(--ui);font-size:12.5px;color:var(--d1);letter-spacing:.08em;margin-bottom:8px}
+.stay p{font-size:14.5px;margin:0;color:#4C3F2D}
+
+/* ---------- prep ---------- */
+.dates{list-style:none;margin:0;padding:0}
+.dates li{display:flex;gap:16px;padding:11px 0;border-bottom:1px solid var(--linen-3);align-items:baseline}
+.dates .d{flex:0 0 130px;font-family:var(--ui);font-size:13px;font-variant-numeric:tabular-nums;color:var(--d1);font-weight:500}
+.dates .w{flex:1 1 auto;font-size:15px}
+.dates .c{font-family:var(--ui);font-size:12.5px;color:var(--text-soft);white-space:nowrap}
+@media (max-width:560px){
+  .dates li{flex-wrap:wrap;gap:2px 12px}
+  .dates .d{flex:0 0 100%}
+}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-top:8px}
+.cards section{border-top:3px solid var(--line);padding-top:12px}
+.cards h4{margin:0 0 6px}
+.cards p{font-size:14.5px}
+.cards ul{margin:0;padding-left:18px;font-size:14.5px}
+.cards li{margin-bottom:5px}
+
+footer{color:var(--ground-mute);font-family:var(--ui);font-size:12.5px;margin-top:30px;line-height:1.9}
+footer a{color:var(--gold)}
+
+/* ---------- frieze motion ---------- */
+.unroll-cover{transform:translateX(1400px)}
+@keyframes unroll{from{transform:translateX(0)}to{transform:translateX(1400px)}}
+.frieze .unroll-cover{animation:unroll 1.6s cubic-bezier(.22,1,.36,1) both}
+@media (prefers-reduced-motion:reduce){
+  .frieze .unroll-cover{animation:none}
+}
+.lat{font-family:var(--display);font-size:13px;letter-spacing:.2em;fill:#5E4A30;text-anchor:middle}
+.num{font-family:var(--display);font-size:11px;letter-spacing:.16em;fill:#8A775C;text-anchor:middle}
+
+@media print{
+  body{background:#fff}
+  .sheet{max-width:none;padding:0}
+  .nav,.daytabs,.swipe-hint,.rail,.mapnote{display:none!important}
+  .view{display:block!important;page-break-before:always}
+  .day{display:block!important;page-break-inside:avoid}
+  .hero-text{color:#000}
+  .panel{border:none;padding:0}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+
+<header class="hero">
+  <div class="frieze-wrap">
+    <svg class="frieze" viewBox="0 0 1400 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="以貝葉掛毯風格繡出的橫飾帶，由左至右依序為大英博物館、西敏寺、倫敦塔、聖保羅座堂、溫莎城堡、亞伯特紀念碑與卡蒂薩克號帆船">
+      <defs>
+        <pattern id="rail" width="96" height="22" patternUnits="userSpaceOnUse">
+          <rect width="96" height="22" fill="#E2D5B8"/>
+          <path d="M24 4 L34 11 L24 18 L14 11 Z" fill="#A8392A" opacity=".75"/>
+          <path d="M72 4 L82 11 L72 18 L62 11 Z" fill="#2C4A6E" opacity=".7"/>
+          <path d="M0 11 H8 M40 11 H56 M88 11 H96" stroke="#3E2E1E" stroke-width="1.2"/>
+        </pattern>
+        <g id="tree" fill="#6C7C46" stroke="#3E2E1E" stroke-width="2.2" stroke-linejoin="round">
+          <path d="M-3 0 h6 l-1 -34 h-4 z"/>
+          <path d="M0 -34 C -14 -42 -24 -34 -18 -26 C -8 -24 -6 -32 0 -30 Z"/>
+          <path d="M0 -34 C 14 -42 24 -34 18 -26 C 8 -24 6 -32 0 -30 Z"/>
+          <circle cx="0" cy="-50" r="10"/>
+          <circle cx="-15" cy="-41" r="7.5"/>
+          <circle cx="15" cy="-41" r="7.5"/>
+        </g>
+      </defs>
+
+      <rect width="1400" height="200" fill="#EDE3CC"/>
+      <rect y="0" width="1400" height="22" fill="url(#rail)"/>
+      <rect y="178" width="1400" height="22" fill="url(#rail)"/>
+      <path d="M0 22 H1400 M0 178 H1400" stroke="#3E2E1E" stroke-width="1.6"/>
+      <path d="M0 160 H1400" stroke="#3E2E1E" stroke-width="2.2"/>
+
+      <g stroke="#3E2E1E" stroke-width="2.6" stroke-linejoin="round">
+
+        <!-- I. British Museum -->
+        <g fill="#A8392A">
+          <rect x="40" y="154" width="140" height="6"/>
+          <rect x="46" y="148" width="128" height="6"/>
+          <rect x="56" y="106" width="11" height="42"/>
+          <rect x="79" y="106" width="11" height="42"/>
+          <rect x="102" y="106" width="11" height="42"/>
+          <rect x="125" y="106" width="11" height="42"/>
+          <rect x="148" y="106" width="11" height="42"/>
+          <rect x="46" y="97" width="128" height="9"/>
+          <path d="M40 97 L110 62 L180 97 Z"/>
+        </g>
+
+        <use href="#tree" x="205" y="160"/>
+
+        <!-- II. Westminster Abbey -->
+        <g fill="#2C4A6E">
+          <rect x="288" y="112" width="24" height="48"/>
+          <path d="M283 112 L300 95 L317 112 Z"/>
+          <rect x="252" y="80" width="36" height="80"/>
+          <rect x="312" y="80" width="36" height="80"/>
+          <rect x="247" y="71" width="46" height="10"/>
+          <rect x="307" y="71" width="46" height="10"/>
+          <rect x="249" y="63" width="6" height="9"/>
+          <rect x="267" y="63" width="6" height="9"/>
+          <rect x="285" y="63" width="6" height="9"/>
+          <rect x="309" y="63" width="6" height="9"/>
+          <rect x="327" y="63" width="6" height="9"/>
+          <rect x="345" y="63" width="6" height="9"/>
+        </g>
+        <g fill="#EDE3CC" stroke="#3E2E1E" stroke-width="2.2">
+          <circle cx="300" cy="130" r="9"/>
+          <path d="M262 98 a7 7 0 0 1 14 0 v18 h-14 z"/>
+          <path d="M322 98 a7 7 0 0 1 14 0 v18 h-14 z"/>
+        </g>
+
+        <use href="#tree" x="395" y="160"/>
+
+        <!-- III. Tower of London -->
+        <g fill="#6C7C46">
+          <rect x="424" y="142" width="132" height="18"/>
+          <rect x="444" y="86" width="92" height="56"/>
+          <rect x="440" y="78" width="100" height="9"/>
+          <rect x="436" y="56" width="17" height="23"/>
+          <rect x="527" y="56" width="17" height="23"/>
+          <rect x="481" y="54" width="18" height="25"/>
+          <path d="M432 56 L444.5 43 L457 56 Z"/>
+          <path d="M523 56 L535.5 43 L548 56 Z"/>
+          <path d="M477 54 L490 40 L503 54 Z"/>
+        </g>
+        <g fill="#EDE3CC" stroke="#3E2E1E" stroke-width="2.2">
+          <path d="M459 104 a6 6 0 0 1 12 0 v16 h-12 z"/>
+          <path d="M484 104 a6 6 0 0 1 12 0 v16 h-12 z"/>
+          <path d="M509 104 a6 6 0 0 1 12 0 v16 h-12 z"/>
+        </g>
+
+        <use href="#tree" x="590" y="160"/>
+
+        <!-- IV. St Paul's -->
+        <g fill="#B3862A">
+          <rect x="626" y="132" width="128" height="28"/>
+          <rect x="628" y="104" width="21" height="29"/>
+          <rect x="731" y="104" width="21" height="29"/>
+          <path d="M624 104 L638.5 88 L653 104 Z"/>
+          <path d="M727 104 L741.5 88 L756 104 Z"/>
+          <rect x="662" y="106" width="56" height="27"/>
+          <path d="M660 106 A 32 30 0 0 1 720 106 Z"/>
+          <rect x="684" y="70" width="12" height="14"/>
+          <circle cx="690" cy="65" r="4.5"/>
+        </g>
+        <path d="M690 61 V54 M686.5 57 H693.5" stroke-width="2.2"/>
+
+        <use href="#tree" x="785" y="160"/>
+
+        <!-- V. Windsor -->
+        <g fill="#6E4557">
+          <path d="M822 160 C 838 134 922 134 938 160 Z"/>
+          <rect x="826" y="140" width="108" height="20"/>
+          <rect x="852" y="92" width="56" height="48"/>
+          <rect x="848" y="83" width="64" height="10"/>
+          <rect x="850" y="75" width="10" height="9"/>
+          <rect x="866" y="75" width="10" height="9"/>
+          <rect x="884" y="75" width="10" height="9"/>
+          <rect x="900" y="75" width="10" height="9"/>
+        </g>
+        <path d="M880 75 V51" stroke-width="2.4"/>
+        <path d="M880 52 L910 59 L880 66 Z" fill="#A8392A"/>
+        <g fill="#EDE3CC" stroke="#3E2E1E" stroke-width="2.2">
+          <path d="M866 106 a5.5 5.5 0 0 1 11 0 v15 h-11 z"/>
+          <path d="M885 106 a5.5 5.5 0 0 1 11 0 v15 h-11 z"/>
+        </g>
+
+        <use href="#tree" x="975" y="160"/>
+
+        <!-- VI. Albert Memorial -->
+        <g fill="#2F6E63">
+          <rect x="1030" y="152" width="80" height="8"/>
+          <rect x="1038" y="144" width="64" height="8"/>
+          <rect x="1050" y="122" width="40" height="22"/>
+          <rect x="1042" y="96" width="8" height="26"/>
+          <rect x="1058" y="96" width="8" height="26"/>
+          <rect x="1074" y="96" width="8" height="26"/>
+          <rect x="1090" y="96" width="8" height="26"/>
+          <path d="M1036 96 h68 l-11 -13 h-46 z"/>
+          <path d="M1070 56 L1092 83 H1048 Z"/>
+        </g>
+        <path d="M1070 56 V48 M1066 52 H1074" stroke-width="2.2"/>
+
+        <use href="#tree" x="1170" y="160"/>
+
+        <!-- VII. Cutty Sark -->
+        <g fill="#7A4A26">
+          <path d="M1212 136 h116 l-16 22 h-84 z"/>
+        </g>
+        <path d="M1270 136 V60" stroke-width="2.6"/>
+        <g fill="#7A4A26">
+          <path d="M1236 96 h68 l-7 26 h-54 z"/>
+          <path d="M1246 68 h48 l-5 20 h-38 z"/>
+        </g>
+        <path d="M1258 96 L1255 122 M1276 96 L1279 122 M1292 96 L1291 122" stroke-width="1.8" fill="none"/>
+        <path d="M1270 60 L1298 66 L1270 72 Z" fill="#A8392A"/>
+        <g fill="#EDE3CC" stroke="#3E2E1E" stroke-width="2">
+          <circle cx="1238" cy="145" r="6"/>
+          <circle cx="1258" cy="145" r="6"/>
+          <circle cx="1278" cy="145" r="6"/>
+        </g>
+        <path d="M1200 163 q14 -6 28 0 t28 0 t28 0 t28 0 t28 0" fill="none" stroke-width="2"/>
+      </g>
+
+      <g class="lat">
+        <text x="110" y="36">MVSEVM</text>
+        <text x="300" y="36">WESTMONASTERIVM</text>
+        <text x="490" y="36">TVRRIS</text>
+        <text x="690" y="36">S · PAVLVS</text>
+        <text x="880" y="36">WINDESORA</text>
+        <text x="1070" y="36">ALBERTVS</text>
+        <text x="1270" y="36">NAVIS</text>
+      </g>
+      <g class="num">
+        <text x="110" y="175">I</text>
+        <text x="300" y="175">II</text>
+        <text x="490" y="175">III</text>
+        <text x="690" y="175">IV</text>
+        <text x="880" y="175">V</text>
+        <text x="1070" y="175">VI</text>
+        <text x="1270" y="175">VII</text>
+      </g>
+
+      <rect class="unroll-cover" x="0" y="0" width="1400" height="200" fill="#EDE3CC"/>
+    </svg>
+  </div>
+  <p class="swipe-hint">← 左右滑動看完整條飾帶 →</p>
+
+  <div class="hero-text">
+    <h1>倫敦七日</h1>
+    <p class="hero-sub">博物館、教堂與一千年的歷史</p>
+    <p class="lede">給第一次來倫敦、想把時間花在展櫃與石頭上的人。每天集中在一個區域，以走路為主、地鐵為輔；付費景點都建議提前訂時段票，標示「免費」的可以當天直接走進去。星期別可以整組平移，但請把週日留給格林威治——西敏寺與聖保羅週日只做禮拜，不開放參觀。</p>
+  </div>
+
+  <div class="rail">
+    <div><b>7</b><span>天，六夜</span></div>
+    <div><b>12</b><span>間博物館與美術館</span></div>
+    <div><b>10</b><span>座教堂與座堂</span></div>
+    <div><b>12</b><span>處免費入場</span></div>
+  </div>
+</header>
+
+<div class="alert">
+  <h2>先搞定貝葉掛毯的票，其他都好說</h2>
+  <p>掛毯在大英博物館展到 2027 年 7 月 11 日，是它完成近千年來首次回到英國。<strong>4–7 月場次的票要等 2027 年初才釋出，日期尚未公布</strong>，請先去大英博物館官網訂閱電子報。若改走 3 月，1–3 月場次於 2026 年 10 月 21 日開賣，<span class="count" id="countdown">計算中</span>。</p>
+</div>
+
+<nav class="nav" role="tablist" aria-label="區段">
+  <button role="tab" data-view="itin" aria-selected="true">七日行程</button>
+  <button role="tab" data-view="open" aria-selected="false">開放日對照</button>
+  <button role="tab" data-view="cost" aria-selected="false">門票與預算</button>
+  <button role="tab" data-view="food" aria-selected="false">餐廳</button>
+  <button role="tab" data-view="stay" aria-selected="false">住宿</button>
+  <button role="tab" data-view="prep" aria-selected="false">行前準備</button>
+</nav>
+
+<div class="panel">
+
+<!-- ===================== 行程 ===================== -->
+<div class="view is-on" id="view-itin">
+  <div class="mapblock">
+    <div class="mapwrap">
+      <svg class="map" id="map" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="中倫敦景點示意圖，標出七天行程的所有地點">
+        <rect width="1200" height="630" fill="#EDE3CC"/>
+        <g fill="#C9D3AE" stroke="#B2BE93" stroke-width="1.5">
+          <rect x="49" y="236" width="225" height="93" rx="16"/>
+          <rect x="185" y="37" width="121" height="93" rx="16"/>
+          <rect x="335" y="298" width="65" height="43" rx="11"/>
+          <rect x="287" y="280" width="54" height="46" rx="11"/>
+          <rect x="1107" y="508" width="72" height="93" rx="13"/>
+        </g>
+        <path d="M 58 538 Q 162 519 202 511 Q 242 502 280 499 Q 317 496 346 488 Q 375 480 396 472 Q 417 463 426 445 Q 436 426 438 406 Q 440 385 440 365 Q 441 345 446 323 Q 450 301 462 287 Q 473 273 495 267 Q 516 261 532 260 Q 548 260 564 262 Q 580 264 596 269 Q 612 273 626 277 Q 640 280 661 284 Q 681 287 694 294 Q 707 301 731 298 Q 756 295 785 287 Q 813 280 839 275 Q 865 271 888 275 Q 912 280 929 295 Q 947 310 959 338 Q 970 366 976 396 Q 982 426 988 449 Q 993 471 1015 480 Q 1036 489 1063 490 Q 1090 491 1111 483 Q 1131 475 1146 455 Q 1161 436 1170 412 Q 1179 387 1184 361 L 1190 334" fill="none" stroke="#6E93A3" stroke-width="27" stroke-linecap="round"/>
+        <path d="M 58 538 Q 162 519 202 511 Q 242 502 280 499 Q 317 496 346 488 Q 375 480 396 472 Q 417 463 426 445 Q 436 426 438 406 Q 440 385 440 365 Q 441 345 446 323 Q 450 301 462 287 Q 473 273 495 267 Q 516 261 532 260 Q 548 260 564 262 Q 580 264 596 269 Q 612 273 626 277 Q 640 280 661 284 Q 681 287 694 294 Q 707 301 731 298 Q 756 295 785 287 Q 813 280 839 275 Q 865 271 888 275 Q 912 280 929 295 Q 947 310 959 338 Q 970 366 976 396 Q 982 426 988 449 Q 993 471 1015 480 Q 1036 489 1063 490 Q 1090 491 1111 483 Q 1131 475 1146 455 Q 1161 436 1170 412 Q 1179 387 1184 361 L 1190 334" fill="none" stroke="#B7CDD7" stroke-width="23" stroke-linecap="round"/>
+        <g class="dist">
+          <text x="246" y="88">REGENT'S PARK</text>
+          <text x="370" y="150">BLOOMSBURY</text>
+          <text x="176" y="288">HYDE PARK</text>
+          <text x="392" y="404">WESTMINSTER</text>
+          <text x="680" y="208">THE CITY</text>
+          <text x="648" y="356">SOUTHWARK</text>
+          <text x="150" y="444">KENSINGTON</text>
+          <text x="1120" y="594">GREENWICH</text>
+        </g>
+        <text class="water" x="880" y="248">The Thames</text>
+        <g class="compass" fill="#7C6C52">
+          <path d="M1162 20 L1169 44 L1162 38 L1155 44 Z"/>
+          <text class="sm" x="1157" y="60">N</text>
+        </g>
+        <g class="scalebar">
+          <path d="M44 602 h83" stroke="#7C6C52" stroke-width="3"/>
+          <path d="M44 597 v10 M127 597 v10" stroke="#7C6C52" stroke-width="2"/>
+          <text class="sm" x="133" y="606">1 公里</text>
+        </g>
+        <g id="windsorchip" style="display:none">
+          <path d="M108 462 L74 462 M84 456 L74 462 L84 468" stroke="#6E4557" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+          <text class="mlab" style="display:block;fill:#6E4557" x="116" y="467">溫莎城堡　向西約 40 公里，火車一小時</text>
+        </g>
+        <g id="routes"></g>
+        <g id="rests" style="display:none"></g>
+        <g id="marks"></g>
+      </svg>
+    </div>
+    <div class="maprow">
+      <p class="mapnote">示意圖，非按實際街道繪製。選下方任一天，圖上會標出當天地點的名稱與步行順序；溫莎在圖外。圓點是景點，菱形是餐廳。<span class="mob">手機請左右滑動地圖。</span></p>
+      <button class="showall" id="restToggle">加上餐廳</button>
+    </div>
+  </div>
+
+  <div class="daytabs" role="tablist" aria-label="日期">
+    <button role="tab" data-day="0" aria-selected="true"><b>全</b>全覽</button>
+    <button role="tab" data-day="1" aria-selected="false"><b>一</b>大英博物館</button>
+    <button role="tab" data-day="2" aria-selected="false"><b>二</b>西敏</button>
+    <button role="tab" data-day="3" aria-selected="false"><b>三</b>倫敦塔</button>
+    <button role="tab" data-day="4" aria-selected="false"><b>四</b>倫敦城</button>
+    <button role="tab" data-day="5" aria-selected="false"><b>五</b>溫莎</button>
+    <button role="tab" data-day="6" aria-selected="false"><b>六</b>南肯辛頓</button>
+    <button role="tab" data-day="7" aria-selected="false"><b>日</b>格林威治</button>
+  </div>
+  <div class="days" id="days">
+
+    <section class="day is-on" data-day="0">
+      <div class="matrix-wrap">
+        <table class="week">
+          <thead><tr><th></th><th style="text-align:left">日期</th><th style="text-align:left">區域</th><th style="text-align:left">當天重點</th><th style="text-align:left">步行約</th><th style="text-align:left">付費景點</th></tr></thead>
+          <tbody>
+            <tr data-go="1"><td class="dotcell"><i style="background:var(--d1)"></i></td><td class="wd">週一</td><td class="wk">布倫斯伯里</td><td>大英博物館、大英圖書館、聖潘克拉斯</td><td class="wk">3.5 km</td><td class="wk">貝葉掛毯特展</td></tr>
+            <tr data-go="2"><td class="dotcell"><i style="background:var(--d2)"></i></td><td class="wd">週二</td><td class="wk">西敏</td><td>西敏寺、邱吉爾戰情室、國家美術館</td><td class="wk">3 km</td><td class="wk">西敏寺、戰情室</td></tr>
+            <tr data-go="3"><td class="dotcell"><i style="background:var(--d3)"></i></td><td class="wd">週三</td><td class="wk">倫敦塔與南岸</td><td>倫敦塔、波羅市場、南華克座堂、泰特現代</td><td class="wk">5 km</td><td class="wk">倫敦塔</td></tr>
+            <tr data-go="4"><td class="dotcell"><i style="background:var(--d4)"></i></td><td class="wd">週四</td><td class="wk">倫敦城與霍本</td><td>聖保羅、索恩博物館、詩班晚禱</td><td class="wk">4 km</td><td class="wk">聖保羅座堂</td></tr>
+            <tr data-go="5"><td class="dotcell"><i style="background:var(--d5)"></i></td><td class="wd">週五</td><td class="wk">溫莎（圖外）</td><td>聖喬治禮拜堂、城堡國事廳、伊頓</td><td class="wk">4 km</td><td class="wk">約 £58（火車＋門票）</td></tr>
+            <tr data-go="6"><td class="dotcell"><i style="background:var(--d6)"></i></td><td class="wd">週六</td><td class="wk">南肯辛頓</td><td>V&amp;A、自然史博物館、亞伯特紀念碑</td><td class="wk">3 km</td><td class="wk">全部免費</td></tr>
+            <tr data-go="7"><td class="dotcell"><i style="background:var(--d7)"></i></td><td class="wd">週日</td><td class="wk">格林威治</td><td>彩繪大廳、女王宮、皇家天文台</td><td class="wk">4 km</td><td class="wk">彩繪大廳、天文台</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="mapnote">點任一列看當天的完整時間表。步行距離為粗估，不含地鐵與船程。</p>
+    </section>
+
+    <!-- Day 1 -->
+    <section class="day" data-day="1" style="--dot:var(--d1)">
+      <div class="dayhead">
+        <span class="daynum" style="color:var(--d1)">第一天・週一</span>
+        <span class="dayarea">布倫斯伯里與國王十字　步行為主</span>
+      </div>
+      <p class="daywhy">從全世界最大的百科全書式博物館開場。下午走到大英圖書館，看大憲章與古騰堡聖經；兩個地方都免費，也都需要挑重點，不要想看完。</p>
+      <ul class="tl">
+        <li><span class="t">10:00</span><span class="stem"></span><span class="body">
+          <span class="name">大英博物館<span class="en">British Museum</span><span class="free">常設展免費</span></span>
+          <span class="note">貝葉掛毯特展需另外購票、限時 40 分鐘。之後回頭看羅塞塔石碑、帕德嫩雕刻、蘇頓胡船葬。先在官網登記免費入場時段，繁忙時可優先進場。</span>
+        </span></li>
+        <li><span class="t">14:00</span><span class="stem"></span><span class="body">
+          <span class="name">大英圖書館寶藏廳<span class="en">Treasures Gallery</span><span class="free">免費</span></span>
+          <span class="note">大憲章、《貝武夫》手稿、莎士比亞第一對開本、達文西筆記、披頭四手寫歌詞，全在同一個展廳。廳內刻意偏暗偏涼，建議多帶一件外套。</span>
+        </span></li>
+        <li><span class="t">16:00</span><span class="stem"></span><span class="body">
+          <span class="name">聖潘克拉斯車站<span class="en">St Pancras</span><span class="free">免費</span></span>
+          <span class="note">1873 年落成的維多利亞哥德式紅磚傑作，就在圖書館對街。上二樓看拱頂與大時鐘，順道喝杯東西。</span>
+        </span></li>
+        <li><span class="t">18:30</span><span class="stem"></span><span class="body">
+          <span class="name">柯芬園<span class="en">Covent Garden</span></span>
+          <span class="note">晚餐與街頭表演。想看西區音樂劇的話，這一帶的劇院最集中，記得提前訂位。</span>
+        </span></li>
+      </ul>
+      <div class="tip"><b>提醒</b>：大英博物館每天開放，週五延長到 20:30，所以這天可以和其他天對調，配合搶到的掛毯場次。</div>
+    </section>
+
+    <!-- Day 2 -->
+    <section class="day" data-day="2" style="--dot:var(--d2)">
+      <div class="dayhead">
+        <span class="daynum" style="color:var(--d2)">第二天・週二</span>
+        <span class="dayarea">西敏與白廳　全程步行</span>
+      </div>
+      <p class="daywhy">一天之內走完英國的加冕教堂、國會、二戰指揮中樞與國家美術館，彼此都在十分鐘腳程內。西敏寺開門就進去，人最少。</p>
+      <ul class="tl">
+        <li><span class="t">09:30</span><span class="stem"></span><span class="body">
+          <span class="name">西敏寺<span class="en">Westminster Abbey</span></span>
+          <span class="note">自 1066 年起每位君主都在此加冕，也是十七位君王的長眠之地。詩人角、科學家角、無名戰士墓都在裡面，預留兩個半小時。</span>
+        </span></li>
+        <li><span class="t">12:00</span><span class="stem"></span><span class="body">
+          <span class="name">國會大廈與大笨鐘<span class="en">Palace of Westminster</span></span>
+          <span class="note">走上西敏橋拍全景，再回頭在議會廣場一帶吃午餐。想入內參觀要另外預約導覽。</span>
+        </span></li>
+        <li><span class="t">13:30</span><span class="stem"></span><span class="body">
+          <span class="name">邱吉爾戰情室<span class="en">Churchill War Rooms</span></span>
+          <span class="note">二戰期間的地下指揮中樞，戰爭結束當天原封鎖上、幾乎原樣保存。須預約時段，附語音導覽。</span>
+        </span></li>
+        <li><span class="t">15:45</span><span class="stem"></span><span class="body">
+          <span class="name">騎兵衛隊閱兵場<span class="en">Horse Guards</span><span class="free">免費</span></span>
+          <span class="note">下午四點的下馬衛兵儀式，比白金漢宮前的交接安靜許多，也看得更近。時間以現場公告為準。</span>
+        </span></li>
+        <li><span class="t">16:15</span><span class="stem"></span><span class="body">
+          <span class="name">國家美術館<span class="en">National Gallery</span><span class="free">免費</span></span>
+          <span class="note">18:00 閉館，時間不多，就挑梵谷〈向日葵〉、透納〈戰艦無畏號〉、范艾克〈阿爾諾非尼夫婦〉這條線走。部分展廳整修中，在意哪幅畫就先上官網查位置。</span>
+        </span></li>
+        <li><span class="t">19:00</span><span class="stem"></span><span class="body">
+          <span class="name">聖馬田教堂<span class="en">St Martin-in-the-Fields</span></span>
+          <span class="note">可選。特拉法加廣場邊的教堂，晚上常有燭光古典音樂會，地窖還有一間咖啡館。</span>
+        </span></li>
+      </ul>
+      <div class="tip"><b>想看衛兵交接？</b>國王衛隊通常在週一、三、五 11:00 交接（週日 10:00）。若非看不可，把這天和週三對調：早上先去白金漢宮看交接，下午再進西敏寺。時程偶爾會因天候或典禮取消。</div>
+    </section>
+
+    <!-- Day 3 -->
+    <section class="day" data-day="3" style="--dot:var(--d3)">
+      <div class="dayhead">
+        <span class="daynum" style="color:var(--d3)">第三天・週三</span>
+        <span class="dayarea">倫敦塔與南岸　過橋步行</span>
+      </div>
+      <p class="daywhy">上午給近千年的城堡、監獄與鑄幣廠，下午過河走南岸：市場、座堂、環球劇場、發電廠改成的美術館。</p>
+      <ul class="tl">
+        <li><span class="t">09:00</span><span class="stem"></span><span class="body">
+          <span class="name">倫敦塔<span class="en">Tower of London</span></span>
+          <span class="note">一開門就直奔皇冠珠寶，正午到下午三點隊伍最長。接著跟 Yeoman Warder 導覽（含在門票內），再看白塔、血腥塔與城牆步道。至少三小時。</span>
+        </span></li>
+        <li><span class="t">12:30</span><span class="stem"></span><span class="body">
+          <span class="name">萬聖堂<span class="en">All Hallows by the Tower</span><span class="free">免費</span></span>
+          <span class="note">倫敦城最古老的教堂，675 年創建，地窖裡還留著撒克遜拱門與羅馬時期的地磚。就在倫敦塔出口旁，十分鐘就能看完。</span>
+        </span></li>
+        <li><span class="t">13:00</span><span class="stem"></span><span class="body">
+          <span class="name">倫敦塔橋<span class="en">Tower Bridge</span></span>
+          <span class="note">走過去就好；想登高空玻璃步道與維多利亞蒸汽機房則需另購票。</span>
+        </span></li>
+        <li><span class="t">13:45</span><span class="stem"></span><span class="body">
+          <span class="name">波羅市場<span class="en">Borough Market</span><span class="free">免費</span></span>
+          <span class="note">午餐。倫敦最好的食品市場，起司、生蠔、西班牙火腿都值得排隊。週三人潮中等。</span>
+        </span></li>
+        <li><span class="t">14:45</span><span class="stem"></span><span class="body">
+          <span class="name">南華克座堂<span class="en">Southwark Cathedral</span><span class="free">免費</span></span>
+          <span class="note">倫敦最古老的哥德式教堂建築，就在市場旁邊。莎士比亞的弟弟葬在這裡，也有一座莎翁紀念像。</span>
+        </span></li>
+        <li><span class="t">15:30</span><span class="stem"></span><span class="body">
+          <span class="name">莎士比亞環球劇場<span class="en">Shakespeare's Globe</span></span>
+          <span class="note">依原貌重建的木造露天劇場，有導覽可參加。若行程在五至九月，晚上可以買站票看一場戲。</span>
+        </span></li>
+        <li><span class="t">16:30</span><span class="stem"></span><span class="body">
+          <span class="name">泰特現代美術館<span class="en">Tate Modern</span><span class="free">免費</span></span>
+          <span class="note">發電廠改建，渦輪大廳本身就值得一看。離開時走千禧橋過河，正對聖保羅穹頂——這是全倫敦最好的一段步行路線。</span>
+        </span></li>
+      </ul>
+      <div class="tip"><b>提醒</b>：倫敦塔週二至週六 09:00 開門，週日與週一 10:00。門票含皇冠珠寶與所有展區，裡面不會再收費。</div>
+    </section>
+
+    <!-- Day 4 -->
+    <section class="day" data-day="4" style="--dot:var(--d4)">
+      <div class="dayhead">
+        <span class="daynum" style="color:var(--d4)">第四天・週四</span>
+        <span class="dayarea">倫敦城與霍本　全程步行</span>
+      </div>
+      <p class="daywhy">教堂密度最高的一天，從雷恩的巴洛克穹頂到 1123 年的諾曼拱廊。傍晚回到聖保羅聽詩班晚禱，免費，是這趟最安靜的一小時。</p>
+      <ul class="tl">
+        <li><span class="t">08:30</span><span class="stem"></span><span class="body">
+          <span class="name">聖保羅座堂<span class="en">St Paul's Cathedral</span></span>
+          <span class="note">開門就到。先上耳語廊試聲音，再爬到金廊看全城；共 528 階，樓梯窄且滑，穿好鞋。地窖裡有納爾遜、威靈頓與雷恩本人的墓。</span>
+        </span></li>
+        <li><span class="t">11:15</span><span class="stem"></span><span class="body">
+          <span class="name">大聖巴多羅買堂<span class="en">St Bartholomew-the-Great</span></span>
+          <span class="note">1123 年的諾曼式修道院教堂，倫敦僅存最古老的教堂內部之一。厚實的圓柱與昏暗光線，和聖保羅正好相反。</span>
+        </span></li>
+        <li><span class="t">11:45</span><span class="stem"></span><span class="body">
+          <span class="name">倫敦博物館<span class="en">London Museum</span><span class="free">免費</span></span>
+          <span class="note">2026 年 11 月 28 日在史密斯菲爾德舊肉品市場開幕的新館，從羅馬倫蒂尼恩一路講到今天。就在聖巴多羅買堂對面，順道午餐。</span>
+        </span></li>
+        <li><span class="t">14:15</span><span class="stem"></span><span class="body">
+          <span class="name">索恩爵士博物館<span class="en">Sir John Soane's Museum</span><span class="free">免費</span></span>
+          <span class="note">建築師索恩的自宅，1837 年他過世時什麼樣，現在還是什麼樣。塞滿古物、鏡子與採光井，是全倫敦最奇特的房子。週四 14:30 有免費的繪圖室導覽，限六人，現場登記。</span>
+        </span></li>
+        <li><span class="t">15:40</span><span class="stem"></span><span class="body">
+          <span class="name">聖殿教堂<span class="en">Temple Church</span></span>
+          <span class="note">聖殿騎士團 1185 年建的圓形教堂，地上躺著騎士的石棺像。藏在律師學院的中庭裡，開放時間不固定，去之前先查官網。</span>
+        </span></li>
+        <li><span class="t">17:00</span><span class="stem"></span><span class="body">
+          <span class="name">聖保羅詩班晚禱<span class="en">Choral Evensong</span><span class="free">免費</span></span>
+          <span class="note">週一至週六 17:00，約 45 分鐘，不需門票也不需事先報名，從禮拜專用入口進去。坐在唱詩班席聽整座穹頂的回音，比白天付費參觀更難忘。提早 15 分鐘到。</span>
+        </span></li>
+      </ul>
+      <div class="tip"><b>兩個坑要避開</b>：聖保羅週三早上 10:00 才開放參觀（其餘平日與週六 08:30），週日完全不開放觀光。索恩博物館週一、週二休館。</div>
+    </section>
+
+    <!-- Day 5 -->
+    <section class="day" data-day="5" style="--dot:var(--d5)">
+      <div class="dayhead">
+        <span class="daynum" style="color:var(--d5)">第五天・週五</span>
+        <span class="dayarea">溫莎一日遊　火車來回</span>
+      </div>
+      <p class="daywhy">世界上仍在使用、且持續使用最久的城堡，1070 年代由征服者威廉開建，四十位君主住過。伊莉莎白二世長眠在聖喬治禮拜堂。</p>
+      <ul class="tl">
+        <li><span class="t">08:45</span><span class="stem"></span><span class="body">
+          <span class="name">前往溫莎<span class="en">Windsor</span></span>
+          <span class="note">Waterloo 站直達 Windsor &amp; Eton Riverside，約一小時；或 Paddington 在 Slough 換車，快一些。用感應支付即可。</span>
+        </span></li>
+        <li><span class="t">10:00</span><span class="stem"></span><span class="body">
+          <span class="name">聖喬治禮拜堂<span class="en">St George's Chapel</span></span>
+          <span class="note">先看這裡，不要先進國事廳。禮拜堂 16:00 就關，比城堡早，而且下午兩點半後常限制進入。亨利八世、查理一世與伊莉莎白二世都葬在此。</span>
+        </span></li>
+        <li><span class="t">11:00</span><span class="stem"></span><span class="body">
+          <span class="name">城堡國事廳<span class="en">State Apartments</span></span>
+          <span class="note">含在門票內，也別錯過瑪麗王后娃娃屋——1:12 比例、水電俱全的迷你宮殿。城堡本身建議留兩個半到三小時。</span>
+        </span></li>
+        <li><span class="t">13:30</span><span class="stem"></span><span class="body">
+          <span class="name">溫莎鎮與伊頓<span class="en">Eton</span><span class="free">免費</span></span>
+          <span class="note">午餐後過泰晤士河的步行橋到伊頓，沿著 High Street 走到伊頓公學。小鎮安靜，古書店和茶室都在這條街上。</span>
+        </span></li>
+        <li><span class="t">18:30</span><span class="stem"></span><span class="body">
+          <span class="name">國家美術館夜場<span class="en">Friday Late</span><span class="free">免費</span></span>
+          <span class="note">可選。回到市區若還有力氣，國家美術館週五開到 21:00，晚上人少很多，還常有導覽與演出，正好補看第二天沒看完的。</span>
+        </span></li>
+      </ul>
+      <div class="tip"><b>務必確認</b>：溫莎城堡週二、週三休館；聖喬治禮拜堂週日不開放參觀（僅供禮拜）。城堡是使用中的王室住所，可能臨時關閉，出發當天早上再查一次官網。三月至十月的閉館時間是 17:15，最後入場 16:00。</div>
+
+      <h4>自己搭火車，還是參加一日遊？</h4>
+      <div class="cards">
+        <section>
+          <h4>自己去（上面的安排）</h4>
+          <ul>
+            <li>Waterloo 直達 53 分鐘不用換車；或 Paddington 搭快車 17 分鐘到 Slough 換車，接得上的話全程 28 分鐘</li>
+            <li>單程車資 £13，提早訂約 £9；城堡門票 £32</li>
+            <li>一人約 £58，含來回車資與門票</li>
+            <li>城堡想待多久待多久，聖喬治禮拜堂不會被趕</li>
+            <li>下午還走得到溫莎鎮與伊頓</li>
+          </ul>
+        </section>
+        <section>
+          <h4>參加一日遊</h4>
+          <ul>
+            <li>市面上幾乎沒有「只去溫莎」的團，都綁史前巨石陣，多半再加巴斯或牛津</li>
+            <li>含全部門票約 £174；不含羅馬浴場約 £135；只含巨石陣門票約 £110，溫莎城堡票要自己補</li>
+            <li>全程約 11 小時，早出晚歸，遊覽車上的時間很長</li>
+            <li>溫莎通常只分到兩小時上下，聖喬治禮拜堂會很趕</li>
+            <li>有中文、日文等多語導覽，語言上輕鬆得多</li>
+            <li>巨石陣沒有車、不跟團，一天基本上到不了</li>
+          </ul>
+        </section>
+      </div>
+      <div class="tip"><b>建議</b>：這趟的主題是教堂與歷史，而聖喬治禮拜堂大概是全程僅次於西敏寺最重要的一座——亨利八世、查理一世與伊莉莎白二世都葬在裡面，跟團會把它壓得很趕。所以如果溫莎城堡本身是重點，自己搭火車明顯划算：省掉三分之二的錢，時間也自由，而且溫莎是倫敦最容易自己去的一日遊，全程不用換車。<br><br>反過來，如果她其實更想看巨石陣，那就值得跟團——但那等於是用溫莎換巨石陣，不是加強溫莎。真的兩個都想要，就多留一天。另外，跟團的日期也要避開週二、週三，否則溫莎只能逛鎮上，進不了城堡。</div>
+    </section>
+
+    <!-- Day 6 -->
+    <section class="day" data-day="6" style="--dot:var(--d6)">
+      <div class="dayhead">
+        <span class="daynum" style="color:var(--d6)">第六天・週六</span>
+        <span class="dayarea">南肯辛頓　全程步行</span>
+      </div>
+      <p class="daywhy">1851 年萬國博覽會的盈餘，蓋出了這一整片博物館區。三館相連、全部免費，一天絕對看不完，所以只挑想看的。</p>
+      <ul class="tl">
+        <li><span class="t">10:00</span><span class="stem"></span><span class="body">
+          <span class="name">V&amp;A 博物館<span class="en">Victoria and Albert Museum</span><span class="free">免費</span></span>
+          <span class="note">全世界最大的裝飾藝術與設計收藏。必看：鑄造廳的大衛像與圖拉真柱石膏複製品、拉斐爾壁毯畫稿、中世紀與文藝復興展廳、時裝廳。</span>
+        </span></li>
+        <li><span class="t">12:30</span><span class="stem"></span><span class="body">
+          <span class="name">V&amp;A 咖啡廳<span class="en">The Morris Room</span></span>
+          <span class="note">世界第一間博物館附設餐廳，1860 年代由莫里斯、伯恩瓊斯等人設計的三間房，裝潢完整保留。午餐就在這裡吃。</span>
+        </span></li>
+        <li><span class="t">13:30</span><span class="stem"></span><span class="body">
+          <span class="name">布朗普頓祈禱堂<span class="en">Brompton Oratory</span><span class="free">免費</span></span>
+          <span class="note">V&amp;A 隔壁，倫敦少見的義大利巴洛克式天主教堂，裡面有一批來自西恩納主教座堂的十七世紀大理石使徒像。</span>
+        </span></li>
+        <li><span class="t">14:15</span><span class="stem"></span><span class="body">
+          <span class="name">自然史博物館<span class="en">Natural History Museum</span><span class="free">免費</span></span>
+          <span class="note">建築本身被稱為「大自然的主教座堂」，赤陶磚上爬滿動植物浮雕。中央大廳懸著藍鯨骨骼。假日人多，看建築與地球廳就夠。</span>
+        </span></li>
+        <li><span class="t">15:45</span><span class="stem"></span><span class="body">
+          <span class="name">亞伯特紀念碑與皇家亞伯特音樂廳<span class="en">Albert Memorial</span><span class="free">免費</span></span>
+          <span class="note">沿 Exhibition Road 北行穿過肯辛頓花園。維多利亞女王為亡夫所建的哥德復興式神龕，金光閃閃，正對音樂廳。</span>
+        </span></li>
+        <li><span class="t">16:15</span><span class="stem"></span><span class="body">
+          <span class="name">肯辛頓宮<span class="en">Kensington Palace</span></span>
+          <span class="note">可選。維多利亞女王的出生地與成長之處，也是黛安娜王妃的故居；花園裡有她的銅像。</span>
+        </span></li>
+      </ul>
+      <div class="tip"><b>提醒</b>：肯辛頓宮週一、週二休館；女王寓所（Queen's State Apartments）自 2026 年 6 月 15 日起關閉整修，參觀路線會受影響，訂票前先確認開放範圍。想去諾丁丘的波多貝羅市集，週六早上是最熱鬧的時候，可以換到這天開場。</div>
+    </section>
+
+    <!-- Day 7 -->
+    <section class="day" data-day="7" style="--dot:var(--d7)">
+      <div class="dayhead">
+        <span class="daynum" style="color:var(--d7)">第七天・週日</span>
+        <span class="dayarea">格林威治　搭船前往</span>
+      </div>
+      <p class="daywhy">週日幾座大教堂都只做禮拜，正好把這天交給泰晤士河與格林威治的世界遺產區。從西敏碼頭搭船順流而下，沿途看盡地標。</p>
+      <ul class="tl">
+        <li><span class="t">10:00</span><span class="stem"></span><span class="body">
+          <span class="name">搭船往格林威治<span class="en">Uber Boat</span></span>
+          <span class="note">從西敏或倫敦塔碼頭上船，感應支付即可。坐外面甲板，經過塔橋與金絲雀碼頭。約 45 至 70 分鐘。</span>
+        </span></li>
+        <li><span class="t">11:00</span><span class="stem"></span><span class="body">
+          <span class="name">彩繪大廳<span class="en">Painted Hall</span></span>
+          <span class="note">舊皇家海軍學院內，桑希爾花了十九年畫完的巴洛克天頂，被稱為「英國的西斯汀禮拜堂」。對面的學院禮拜堂免費，新古典內裝值得一併看。</span>
+        </span></li>
+        <li><span class="t">12:30</span><span class="stem"></span><span class="body">
+          <span class="name">格林威治市集<span class="en">Greenwich Market</span><span class="free">免費</span></span>
+          <span class="note">午餐。週日攤位最齊，手工藝與熟食都有。</span>
+        </span></li>
+        <li><span class="t">13:30</span><span class="stem"></span><span class="body">
+          <span class="name">女王宮<span class="en">Queen's House</span><span class="free">免費</span></span>
+          <span class="note">英國第一座古典主義建築，1616 年由瓊斯設計。看鬱金香螺旋梯與那幅著名的無敵艦隊肖像。</span>
+        </span></li>
+        <li><span class="t">14:30</span><span class="stem"></span><span class="body">
+          <span class="name">皇家天文台<span class="en">Royal Observatory</span></span>
+          <span class="note">腳跨本初子午線，看哈里森為解決經度問題做的航海鐘。上山那段坡有點陡，但回頭俯瞰的景色是全倫敦最好的其中一個。</span>
+        </span></li>
+        <li><span class="t">16:00</span><span class="stem"></span><span class="body">
+          <span class="name">國家海事博物館與卡蒂薩克號<span class="en">Cutty Sark</span><span class="free">海事博物館免費</span></span>
+          <span class="note">看體力挑一個。最後一艘倖存的茶葉快剪船需購票，可以走到船底下仰望船身。傍晚搭船回市區，夕陽時段的河景最好。</span>
+        </span></li>
+      </ul>
+      <div class="tip"><b>想上教堂做禮拜？</b>週日各教堂的禮拜免費、不需門票，只是不能中途走動參觀。早上先去聖保羅或西敏寺參加一場，再搭船南下，時間剛好。</div>
+    </section>
+
+  </div>
+</div>
+
+<!-- ===================== 開放日 ===================== -->
+<div class="view" id="view-open">
+  <h3>哪天關門，一張表看完</h3>
+  <p class="sub">倫敦行程最常見的失誤，是撲空。以下為 2026 年的常態時間，2027 年出發前請再確認一次官網。</p>
+  <div class="matrix-wrap">
+  <table>
+    <thead>
+      <tr><th style="text-align:left">景點</th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th><th>日</th><th style="text-align:left">備註</th></tr>
+    </thead>
+    <tbody>
+      <tr><th>大英博物館</th><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td style="text-align:left">10:00–17:00，週五至 20:30</td></tr>
+      <tr><th>大英圖書館寶藏廳</th><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td style="text-align:left">週末與週日提早閉館</td></tr>
+      <tr><th>國家美術館</th><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td style="text-align:left">10:00–18:00，週五至 21:00</td></tr>
+      <tr><th>V&amp;A／自然史博物館</th><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td style="text-align:left">每日開放，免費</td></tr>
+      <tr><th>泰特現代美術館</th><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td style="text-align:left">每日開放，免費</td></tr>
+      <tr><th>西敏寺</th><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="l">◐</td><td class="x">○</td><td style="text-align:left">週六提早關，週日僅禮拜</td></tr>
+      <tr><th>聖保羅座堂</th><td class="o">●</td><td class="o">●</td><td class="l">◐</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="x">○</td><td style="text-align:left">週三 10:00 才開，週日僅禮拜</td></tr>
+      <tr><th>倫敦塔</th><td class="l">◐</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="l">◐</td><td style="text-align:left">週日、一 10:00 才開</td></tr>
+      <tr><th>溫莎城堡</th><td class="o">●</td><td class="x">○</td><td class="x">○</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td style="text-align:left">週二、三休館</td></tr>
+      <tr><th>聖喬治禮拜堂</th><td class="o">●</td><td class="x">○</td><td class="x">○</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="x">○</td><td style="text-align:left">16:00 關，比城堡早</td></tr>
+      <tr><th>索恩爵士博物館</th><td class="x">○</td><td class="x">○</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td style="text-align:left">週一、二休館；國定假日週一開放</td></tr>
+      <tr><th>肯辛頓宮</th><td class="x">○</td><td class="x">○</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td style="text-align:left">週一、二休館</td></tr>
+      <tr><th>白金漢宮國事廳</th><td class="x">○</td><td class="x">○</td><td class="x">○</td><td class="x">○</td><td class="x">○</td><td class="x">○</td><td class="x">○</td><td style="text-align:left">僅七至九月開放，春季看不到</td></tr>
+      <tr><th>衛兵交接</th><td class="o">●</td><td class="x">○</td><td class="o">●</td><td class="x">○</td><td class="o">●</td><td class="x">○</td><td class="l">◐</td><td style="text-align:left">一、三、五 11:00；週日 10:00</td></tr>
+      <tr><th>聖保羅詩班晚禱</th><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="l">◐</td><td style="text-align:left">平日與週六 17:00，免費；週日時間另訂</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="legend"><i class="o">●</i> 正常開放　<i class="l">◐</i> 時間縮短或形式不同　<i class="x">○</i> 不開放參觀</p>
+  <h4>由此推出的兩條排程原則</h4>
+  <p>第一，週日不要排西敏寺、聖保羅或溫莎的禮拜堂，改去格林威治或博物館。第二，週一、週二不要排索恩博物館與肯辛頓宮，週二、週三不要排溫莎。本行程已按這兩條安排，整組平移星期別時請重新對一次表。</p>
+</div>
+
+<!-- ===================== 門票 ===================== -->
+<div class="view" id="view-cost">
+  <h3>門票與預算</h3>
+  <p class="sub">以下為 2026 年成人票價，2027 年通常會調漲一到兩英鎊。勾選要去的地方，下方即時計算。</p>
+  <ul class="cost" id="costlist">
+    <li><input type="checkbox" id="c1" data-price="27" checked><label for="c1">貝葉掛毯特展（離峰；尖峰 £33）</label><span class="p">£27</span></li>
+    <li><input type="checkbox" id="c2" data-price="37" checked><label for="c2">倫敦塔（含皇冠珠寶與導覽）</label><span class="p">£37</span></li>
+    <li><input type="checkbox" id="c3" data-price="27" checked><label for="c3">西敏寺</label><span class="p">£27</span></li>
+    <li><input type="checkbox" id="c4" data-price="27" checked><label for="c4">聖保羅座堂（含穹頂與地窖）</label><span class="p">£27</span></li>
+    <li><input type="checkbox" id="c5" data-price="32" checked><label for="c5">溫莎城堡（線上預訂價）</label><span class="p">£32</span></li>
+    <li><input type="checkbox" id="c6" data-price="20"><label for="c6">肯辛頓宮</label><span class="p">£20</span></li>
+    <li><input type="checkbox" id="c7" data-price="33"><label for="c7">白金漢宮國事廳（僅七至九月）</label><span class="p">£33</span></li>
+    <li><input type="checkbox" id="c8" data-price="20" checked><label for="c8">UK ETA 電子旅行許可（每人一次）</label><span class="p">£20</span></li>
+  </ul>
+  <div class="total"><span>已勾選合計</span><b id="costTotal">£0</b></div>
+  <p class="sub" style="margin-top:14px">另需購票、價格未核實：邱吉爾戰情室、倫敦塔橋展覽、環球劇場導覽、彩繪大廳、卡蒂薩克號。請以各官網為準。</p>
+
+  <h4>一個可能划算的選擇</h4>
+  <p>倫敦塔與肯辛頓宮同屬 Historic Royal Palaces。若再加上漢普頓宮，年費約 £68 的個人會員比三張單票便宜，且免預約、可重複進場。只去兩處就不划算。</p>
+
+  <h4>這些完全免費</h4>
+  <ul class="freelist">
+    <li>大英博物館常設展</li>
+    <li>大英圖書館寶藏廳</li>
+    <li>國家美術館</li>
+    <li>泰特現代美術館</li>
+    <li>V&amp;A 博物館</li>
+    <li>自然史博物館</li>
+    <li>倫敦博物館新館</li>
+    <li>索恩爵士博物館</li>
+    <li>女王宮與國家海事博物館</li>
+    <li>聖保羅詩班晚禱</li>
+    <li>衛兵交接與騎兵衛隊儀式</li>
+    <li>萬聖堂、南華克座堂、布朗普頓祈禱堂</li>
+  </ul>
+  <p style="margin-top:14px">免費的館所多半接受自由捐款，通常建議 £5 上下，隨意。</p>
+</div>
+
+<!-- ===================== 餐廳 ===================== -->
+<div class="view" id="view-food">
+  <h3>吃的</h3>
+  <p class="sub">都在行程的步行範圍內，或一兩站地鐵。2026 年 2 月公布的米其林指南裡，倫敦共有 84 家星級餐廳。</p>
+
+  <div class="matrix-wrap">
+    <table class="pair">
+      <thead><tr><th style="text-align:left">日期</th><th style="text-align:left">午餐</th><th style="text-align:left">晚餐</th></tr></thead>
+      <tbody>
+        <tr><td>週一</td><td>博物館餐廳或羅素廣場一帶</td><td>Rules（柯芬園，走路 5 分鐘）</td></tr>
+        <tr><td>週二</td><td>議會廣場周邊</td><td>Kioku by Endo 或 Simpson's in the Strand</td></tr>
+        <tr><td>週三</td><td>波羅市場現吃，或排 Padella</td><td>Sollip、Trivet、Restaurant Story 都在倫敦橋站旁</td></tr>
+        <tr><td>週四</td><td>St John（就在倫敦博物館對面）</td><td>晚禱後留在城區，或往柯芬園</td></tr>
+        <tr><td>週五</td><td>溫莎鎮或伊頓 High Street</td><td>回市區後隨意</td></tr>
+        <tr><td>週六</td><td>V&amp;A 莫里斯廳咖啡廳</td><td>Dinings SW3 或 Brooklands</td></tr>
+        <tr><td>週日</td><td>格林威治市集攤位</td><td>搭船回市區；星級餐廳週日多半休息</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h4>日本料理</h4>
+  <div class="foodgrid">
+    <article>
+      <h5>Kioku by Endo<em>The OWO 頂樓，白廳</em></h5>
+      <p class="meta"><span class="band">££££</span><span class="tag">第二天</span><span class="star">主廚為米其林星級</span></p>
+      <p>Endo Kazutoshi 的屋頂餐廳，露台俯瞰白廳與騎兵衛隊閱兵場。就在 Raffles 那棟樓裡，第二天走完行程抬頭就到。週日到週二不營業，晚餐開到很晚。</p>
+    </article>
+    <article>
+      <h5>Sushi Kanesaka<em>45 Park Lane，梅費爾</em></h5>
+      <p class="meta"><span class="band">££££</span><span class="tag">任一晚</span><span class="star">★ 一星</span></p>
+      <p>東京銀座金坂的倫敦店，江戶前握壽司，靠熟成與醃漬帶出風味而非一味求鮮。開幕七個月就摘星，檯前不到十二個座位，價位是全倫敦最高的一級。</p>
+    </article>
+    <article>
+      <h5>Umu<em>梅費爾</em></h5>
+      <p class="meta"><span class="band">££££</span><span class="tag">任一晚</span><span class="star">★ 一星</span></p>
+      <p>京都懷石路線，開了二十多年仍是倫敦日本料理的標竿。Time Out 把它選為壽司類「米其林等級」的代表。</p>
+    </article>
+    <article>
+      <h5>Mayha<em>馬里波恩</em></h5>
+      <p class="meta"><span class="band">£££</span><span class="tag">第一天</span><span class="star">米其林指南推薦</span></p>
+      <p>十一人的木檯 omakase。午餐每人約 £100 起、晚餐 £180，比上面幾家實際得多，樓下還有一間雞尾酒吧。從大英博物館走過去約二十分鐘。</p>
+    </article>
+    <article>
+      <h5>Dinings SW3<em>騎士橋與切爾西交界</em></h5>
+      <p class="meta"><span class="band">£££</span><span class="tag">第六天</span></p>
+      <p>日式小盤加壽司，氣氛比正統割烹輕鬆，適合逛完博物館後不想太正式的一餐。離 V&amp;A 走路約十五分鐘。</p>
+    </article>
+    <article>
+      <h5>一個提醒<em>Endo at The Rotunda</em></h5>
+      <p class="meta"><span class="tag">出發前查證</span></p>
+      <p>白城的這家星級壽司在 2025 年 9 月火災後停業，重開時間一直未定。若在別處看到推薦，訂位前先確認營業狀態。</p>
+    </article>
+  </div>
+
+  <h4>韓國菜與韓式烤肉</h4>
+  <div class="foodgrid">
+    <article>
+      <h5>Sollip<em>南華克，倫敦橋站旁</em></h5>
+      <p class="meta"><span class="band">££££</span><span class="tag">第三天</span><span class="star">★ 一星</span></p>
+      <p>韓國夫妻檔 Woongchul Park 與 Bomee Ki 開的，把韓國食材與歐洲廚藝接起來：大根做的反烤塔、韓國海苔配薩默塞特起司。只有一套季節套餐，室內安靜素淨，和店外的倫敦橋完全兩個世界。2022 年摘星至今。</p>
+    </article>
+    <article>
+      <h5>KOBA<em>費茲羅維亞，蘇活北側</em></h5>
+      <p class="meta"><span class="band">££</span><span class="tag">第一天</span></p>
+      <p>桌上炭烤，常被說是蘇活一帶最好的韓國餐廳。藍色大理石桌配天窗，除了烤肉還有鍋物與麵。從大英博物館走過去約十五分鐘，第一天晚上順路。</p>
+    </article>
+    <article>
+      <h5>Korean Dinner Party<em>蘇活 Kingly Court 頂樓</em></h5>
+      <p class="meta"><span class="band">££</span><span class="tag">第一天</span></p>
+      <p>洛杉磯韓國城的路數：韓式塔可、泡菜煎餅、紫蘇琴通寧與人參 negroni，店裡放韓國嘻哈。熱鬧，適合想輕鬆一點的晚上。</p>
+    </article>
+    <article>
+      <h5>蘇活韓國城<em>Charing Cross Road 到 Great Windmill Street</em></h5>
+      <p class="meta"><span class="band">£–££</span><span class="tag">第一、二天</span></p>
+      <p>Arang、Yori、Myung Ga 這幾家老店都在這一小片街區，走過去挑一家就行，多半不必訂位。想吃韓式炸雞可以去 CheeMc，後面還有包廂卡拉 OK。真正的韓國城在西南邊的 New Malden，但市區這幾家已經夠好，不必特地跑一趟。</p>
+    </article>
+  </div>
+
+  <h4>英國經典</h4>
+  <div class="foodgrid">
+    <article>
+      <h5>Rules<em>柯芬園 Maiden Lane</em></h5>
+      <p class="meta"><span class="band">£££</span><span class="tag">第一天</span></p>
+      <p>1798 年開業，倫敦最古老的餐廳，兩百多年來只換過五位主人。專做野味，賣得比全英國任何一家餐廳都多。窗上金字寫著生蠔、派、布丁三個字；牆上掛滿老主顧的畫像，狄更斯、卓別林、伊莉莎白二世都來過。</p>
+    </article>
+    <article>
+      <h5>Simpson's in the Strand<em>Strand 100 號</em></h5>
+      <p class="meta"><span class="band">£££</span><span class="tag">第一、二天</span></p>
+      <p>1828 年以咖啡館兼西洋棋室起家，1904 年遷到現址，1974 年是英國最早摘星的餐廳之一。疫情後關了六年，2026 年 3 月由 Jeremy King 重新開幕：英式烤肉配銀製推車現切回來了。Grand Divan 走傳統路線，Green Room 價位親民些。</p>
+    </article>
+    <article>
+      <h5>St John<em>史密斯菲爾德</em></h5>
+      <p class="meta"><span class="band">£££</span><span class="tag">第四天</span><span class="star">★ 一星</span></p>
+      <p>1994 年在一間舊燻製廠裡開張，Fergus Henderson 的「從鼻子吃到尾巴」就是從這裡開始的。烤骨髓配巴西利沙拉是招牌。白牆、掛鉤、沒有多餘裝飾。就在倫敦博物館新館對面，第四天午餐最順。</p>
+    </article>
+    <article>
+      <h5>Padella<em>波羅市場旁</em></h5>
+      <p class="meta"><span class="band">£</span><span class="tag">第三天</span></p>
+      <p>現桿義大利麵，價格低得不合理。不接受訂位，隊伍很長，但兩公里內可以用 WalkUp app 線上排隊，排到再過去。第三天午餐如果市場太擠，這是備案。</p>
+    </article>
+  </div>
+
+  <h4>想吃一頓大的</h4>
+  <div class="foodgrid">
+    <article>
+      <h5>Trivet<em>倫敦橋 Snowsfields</em></h5>
+      <p class="meta"><span class="band">££££</span><span class="tag">第三天</span><span class="star">★★ 二星</span></p>
+      <p>Fat Duck 前主廚 Jonny Lake 與前首席侍酒師 Isa Bal 合開。倫敦的二星裡少數只做單點、不做套餐的一家，酒單四百五十支以上，氣氛卻不端著。和 Sollip 背對背，同一條巷子。</p>
+    </article>
+    <article>
+      <h5>Restaurant Story<em>倫敦橋 Tooley Street</em></h5>
+      <p class="meta"><span class="band">££££</span><span class="tag">第三天</span><span class="star">★★ 二星</span></p>
+      <p>Tom Sellers 用一道道菜講自己的故事，全是隨季節走的英國菜。晚餐九道約 £250，午餐五道約 £140，午間划算得多。</p>
+    </article>
+    <article>
+      <h5>Bonheur by Matt Abé<em>梅費爾 Upper Brook Street</em></h5>
+      <p class="meta"><span class="band">££££</span><span class="tag">任一晚</span><span class="star">★★ 二星</span></p>
+      <p>2026 年最大的話題：開幕才幾個月就直接拿下二星。地址是傳奇的 Le Gavroche 舊址，主廚在 Gordon Ramsay 集團待了十八年才自立門戶。除了套餐也有三道式選擇。</p>
+    </article>
+    <article>
+      <h5>Brooklands by Claude Bosi<em>海德公園角 Peninsula 頂樓</em></h5>
+      <p class="meta"><span class="band">££££</span><span class="tag">第六天</span><span class="star">★★ 二星</span></p>
+      <p>在飯店頂樓，整面窗俯瞰西倫敦。第六天從亞伯特紀念碑沿海德公園南緣走過去約二十五分鐘，或搭一站地鐵。</p>
+    </article>
+  </div>
+
+  <h4>訂位這件事</h4>
+  <div class="cards">
+    <section>
+      <h4>提前多久</h4>
+      <ul>
+        <li>二星與熱門一星：約兩個月前開放訂位，一開就滿</li>
+        <li>Rules、Simpson's：至少兩週前</li>
+        <li>韓式烤肉與 Padella：當天走進去就行</li>
+        <li>多數星級餐廳收訂金或信用卡擔保，取消有期限</li>
+      </ul>
+    </section>
+    <section>
+      <h4>省錢的方法</h4>
+      <ul>
+        <li>星級餐廳的午間套餐常只要晚餐的三分之一</li>
+        <li>Restaurant Story 午餐五道 £140、晚餐九道 £250</li>
+        <li>Mayha 午餐 £100、晚餐 £180</li>
+        <li>帳單通常含 12.5% 服務費，可以要求移除</li>
+      </ul>
+    </section>
+    <section>
+      <h4>週日與週一</h4>
+      <ul>
+        <li>星級餐廳多半週日、週一休息</li>
+        <li>正好和教堂相反：教堂週日不開放參觀</li>
+        <li>所以週日晚餐挑一般餐廳，星級留給週二到週六</li>
+        <li>Kioku 週日到週二都不開</li>
+      </ul>
+    </section>
+    <section>
+      <h4>名單會過期</h4>
+      <ul>
+        <li>2025 到 2026 年倫敦收掉了不少名店</li>
+        <li>Claude Bosi at Bibendum、The Five Fields、La Dame de Pic、Lyle's、Club Gascon 都已結束</li>
+        <li>網路上的舊推薦清單常還留著它們</li>
+        <li>訂位前先確認餐廳還在營業</li>
+      </ul>
+    </section>
+  </div>
+  <p class="sub" style="margin-top:18px">星等依 2026 年 2 月公布的米其林指南，下一版在 2027 年初公布，可能變動。</p>
+</div>
+
+<!-- ===================== 住宿 ===================== -->
+<div class="view" id="view-stay">
+  <h3>住宿建議</h3>
+  <p class="sub">五、六月是旺季，越早訂越好。價位由 £（經濟）到 ££££（頂級，每晚常過千英鎊）。</p>
+  <div class="stay">
+    <article>
+      <h4>Raffles London at The OWO</h4>
+      <p class="band">££££　白廳</p>
+      <p>由邱吉爾等人辦公過的舊陸軍部大樓改建，步行即到西敏寺、戰情室與國家美術館。要走歷史主題，這是頂點。</p>
+    </article>
+    <article>
+      <h4>St. Pancras Renaissance</h4>
+      <p class="band">£££　國王十字</p>
+      <p>1873 年的維多利亞哥德式紅磚地標，大堂與樓梯本身就是景點。緊鄰車站，去巴黎或坎特伯雷最方便，走路 20 分鐘到大英博物館。</p>
+    </article>
+    <article>
+      <h4>Kimpton Fitzroy London</h4>
+      <p class="band">£££　羅素廣場</p>
+      <p>大理石大堂氣派非凡，步行五分鐘到大英博物館。門口的 Piccadilly 線可直達希斯洛機場。</p>
+    </article>
+    <article>
+      <h4>Hazlitt's</h4>
+      <p class="band">£££　蘇活區</p>
+      <p>三棟十八世紀初的喬治時期連排屋，房間擺滿古董，以曾住此地的散文家命名。私密有個性，但老房子房間偏小、樓梯多、沒電梯。</p>
+    </article>
+    <article>
+      <h4>The Hoxton, Holborn</h4>
+      <p class="band">££　霍本</p>
+      <p>性價比最好的一間。走路可到大英博物館、柯芬園與索恩博物館，大堂餐廳氣氛熱鬧。入門房型較小，可考慮升一級。</p>
+    </article>
+    <article>
+      <h4>Premier Inn County Hall</h4>
+      <p class="band">£–££　南岸</p>
+      <p>英國最可靠的平價連鎖，設在泰晤士河畔的舊郡議會大樓，毗鄰倫敦眼。走過西敏橋就是國會大廈與西敏寺。</p>
+    </article>
+  </div>
+  <h4>另外兩個選項</h4>
+  <p>預算不設限又想試新的，可以看看林蔭大道上的 <strong>Waldorf Astoria London – Admiralty Arch</strong>：與白金漢宮遙遙相對的一級古蹟改建，已開放預訂，官方稱 2026 年秋天開幕，餐飲由 Clare Smyth 與 Daniel Boulud 主理。新開幕的旅館初期常需磨合，訂之前先看評價。</p>
+  <p>若想住得離巴特西近一點方便碰面，<strong>art'otel Battersea Power Station</strong> 就在發電廠園區裡，Northern 線可直達市中心。</p>
+</div>
+
+<!-- ===================== 行前 ===================== -->
+<div class="view" id="view-prep">
+  <h3>行前準備</h3>
+  <p class="sub">照這個順序處理，不會漏掉會卡住行程的事。</p>
+
+  <h4>關鍵日期</h4>
+  <ul class="dates" id="datelist">
+    <li><span class="d" data-date="2026-10-21">2026 年 10 月 21 日</span><span class="w">貝葉掛毯 2027 年 1–3 月場次開賣。若行程落在三月，這天要守著電腦。</span><span class="c" data-countdown="2026-10-21"></span></li>
+    <li><span class="d">2027 年初（未公布）</span><span class="w">貝葉掛毯 4–7 月場次開賣。春末或初夏出發的話，要等的是這一批。先訂閱大英博物館電子報。</span><span class="c">待公布</span></li>
+    <li><span class="d">出發前 2–3 個月</span><span class="w">訂倫敦塔、西敏寺、聖保羅、溫莎城堡的時段票，以及西區劇院。</span><span class="c">建議</span></li>
+    <li><span class="d">出發前 3 個工作天以上</span><span class="w">申請 UK ETA。多數幾分鐘內核發，但最長可能要三個工作天。</span><span class="c">必辦</span></li>
+    <li><span class="d">2027 年 3 月 28 日</span><span class="w">復活節。前後兩週學校放假、景點人潮明顯上升，可以的話避開。</span><span class="c">避開</span></li>
+    <li><span class="d">2027 年 5 月 18–22 日</span><span class="w">雀兒喜花展。頭兩天只限 RHS 會員，後三天開放公眾；愛園藝就配合這幾天。</span><span class="c">可配合</span></li>
+    <li><span class="d">2027 年 6 月中某週六</span><span class="w">國王壽辰閱兵，林蔭大道全線封閉。日期通常前一年底公布。</span><span class="c">留意</span></li>
+  </ul>
+
+  <div class="cards">
+    <section>
+      <h4>UK ETA 電子旅行許可</h4>
+      <p>持免簽護照入境英國一律需要，包含嬰兒。</p>
+      <ul>
+        <li>費用 £20，兩年內多次入境，每次最多停留六個月</li>
+        <li>只在官方 UK ETA App 或 GOV.UK 申請，代辦網站會多收錢</li>
+        <li>必須用申請時那本護照入境；換發護照要重辦</li>
+        <li>2026 年 2 月 25 日起，沒有有效 ETA 航空公司會直接拒載</li>
+      </ul>
+    </section>
+    <section>
+      <h4>貝葉掛毯的訂票規則</h4>
+      <p>這是全場最難訂的票，規則比一般特展嚴格。</p>
+      <ul>
+        <li>每筆訂單最多 10 張，同一 email 重複下單會被取消</li>
+        <li>票只限訂票人本人使用，入場可能查證件</li>
+        <li>每個時段限時 40 分鐘，展場燈光偏暗</li>
+        <li>16 歲以下免費，但仍須訂票</li>
+        <li>加入會員可在 2027 年 1 月享優先訂票</li>
+      </ul>
+    </section>
+    <section>
+      <h4>天氣與穿著</h4>
+      <p>五、六月氣溫約 12 至 22 度，日照很長，六月入夜要到九點多。</p>
+      <ul>
+        <li>洋蔥式穿搭，早晚溫差大</li>
+        <li>一把摺傘，雨常是陣雨不是整天</li>
+        <li>好走的鞋，這份行程每天步行五到八公里</li>
+        <li>教堂與博物館室內偏涼，多帶一件薄外套</li>
+      </ul>
+    </section>
+    <section>
+      <h4>交通與現場</h4>
+      <p>不用買交通卡，直接用信用卡或手機感應進出即可，每日車資自動封頂。</p>
+      <ul>
+        <li>地鐵、公車、輕軌與泰晤士河船都適用</li>
+        <li>進出都要感應同一張卡或同一支手機</li>
+        <li>聖保羅與倫敦塔有安檢，大行李不能帶，且沒有寄物處</li>
+        <li>教堂內請勿使用閃光燈；禮拜進行中不得攝影</li>
+      </ul>
+    </section>
+  </div>
+</div>
+
+</div><!-- /panel -->
+
+<footer>
+  <p>票價與開放時間核實於 2026 年 9 月，來源為各景點官網。2027 年的價格、時間與展覽檔期都可能調整，出發前請再確認一次：
+  <a href="https://www.britishmuseum.org/exhibitions/bayeux-tapestry">大英博物館・貝葉掛毯</a>、
+  <a href="https://www.westminster-abbey.org/visit-us/plan-your-visit">西敏寺</a>、
+  <a href="https://www.stpauls.co.uk/planning-your-visit">聖保羅座堂</a>、
+  <a href="https://www.hrp.org.uk/tower-of-london/visit/tickets-and-prices/">倫敦塔</a>、
+  <a href="https://www.rct.uk/visit/windsor-castle">溫莎城堡</a>、
+  <a href="https://www.soane.org/your-visit">索恩爵士博物館</a>、
+  <a href="https://www.gov.uk/guidance/apply-for-an-electronic-travel-authorisation-eta">UK ETA</a>。</p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* 區段切換 */
+  var navBtns = document.querySelectorAll('.nav button');
+  navBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      navBtns.forEach(function(b){ b.setAttribute('aria-selected','false'); });
+      btn.setAttribute('aria-selected','true');
+      document.querySelectorAll('.view').forEach(function(v){ v.classList.remove('is-on'); });
+      var target = document.getElementById('view-' + btn.dataset.view);
+      if (target) target.classList.add('is-on');
+    });
+  });
+
+  /* ---------- 地圖 ---------- */
+  var NS = 'http://www.w3.org/2000/svg';
+  var LON0 = -0.1980, LAT1 = 51.5380;
+  var K = Math.cos(51.505 * Math.PI / 180);
+  var S = 1200 / ((0.0100 - LON0) * K);
+  function px(lon){ return (lon - LON0) * K * S; }
+  function py(lat){ return (LAT1 - lat) * S; }
+
+  var SITES = [
+    {d:1,n:'大英博物館',la:51.5194,lo:-0.1270,a:'l'},
+    {d:1,n:'大英圖書館',la:51.5299,lo:-0.1276,a:'l'},
+    {d:1,n:'聖潘克拉斯車站',la:51.5308,lo:-0.1257,a:'r'},
+    {d:1,n:'柯芬園',la:51.5117,lo:-0.1240,a:'r'},
+
+    {d:2,n:'西敏寺',la:51.4994,lo:-0.1273,a:'l'},
+    {d:2,n:'國會大廈與大笨鐘',la:51.4995,lo:-0.1246,a:'r'},
+    {d:2,n:'邱吉爾戰情室',la:51.5021,lo:-0.1291,a:'l'},
+    {d:2,n:'騎兵衛隊閱兵場',la:51.5044,lo:-0.1265,a:'r'},
+    {d:2,n:'國家美術館',la:51.5089,lo:-0.1283,a:'l'},
+    {d:2,n:'聖馬田教堂',la:51.5088,lo:-0.1263,a:'r'},
+
+    {d:3,n:'倫敦塔',la:51.5081,lo:-0.0759,a:'r'},
+    {d:3,n:'萬聖堂',la:51.5095,lo:-0.0782,a:'t'},
+    {d:3,n:'倫敦塔橋',la:51.5055,lo:-0.0754,a:'r'},
+    {d:3,n:'波羅市場與南華克座堂',la:51.5057,lo:-0.0905,a:'b'},
+    {d:3,n:'環球劇場',la:51.5081,lo:-0.0972,a:'t'},
+    {d:3,n:'泰特現代美術館',la:51.5076,lo:-0.0994,a:'l'},
+
+    {d:4,n:'聖保羅座堂',la:51.5138,lo:-0.0984,a:'r'},
+    {d:4,n:'大聖巴多羅買堂',la:51.5190,lo:-0.0999,a:'r'},
+    {d:4,n:'倫敦博物館',la:51.5192,lo:-0.1022,a:'l'},
+    {d:4,n:'索恩爵士博物館',la:51.5169,lo:-0.1173,a:'l'},
+    {d:4,n:'聖殿教堂',la:51.5133,lo:-0.1105,a:'b'},
+
+    {d:6,n:'V&A 博物館',la:51.4966,lo:-0.1722,a:'b'},
+    {d:6,n:'布朗普頓祈禱堂',la:51.4976,lo:-0.1697,a:'r'},
+    {d:6,n:'自然史博物館',la:51.4967,lo:-0.1764,a:'t'},
+    {d:6,n:'亞伯特紀念碑',la:51.5024,lo:-0.1778,a:'l'},
+    {d:6,n:'肯辛頓宮',la:51.5050,lo:-0.1877,a:'t'},
+
+    {d:7,n:'彩繪大廳',la:51.4829,lo:-0.0075,a:'r'},
+    {d:7,n:'女王宮與海事博物館',la:51.4812,lo:-0.0055,a:'b'},
+    {d:7,n:'皇家天文台',la:51.4769,lo:-0.0005,a:'b'},
+    {d:7,n:'卡蒂薩克號',la:51.4827,lo:-0.0096,a:'l'}
+  ];
+
+  var mapEl = document.getElementById('map');
+  var marksG = document.getElementById('marks');
+  var routesG = document.getElementById('routes');
+  var windsorChip = document.getElementById('windsorchip');
+
+  function el(tag, attrs){
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    return e;
+  }
+
+  [1,2,3,4,6,7].forEach(function(day){
+    var pts = SITES.filter(function(s){ return s.d === day; })
+                   .map(function(s){ return px(s.lo).toFixed(1) + ',' + py(s.la).toFixed(1); });
+    var line = el('polyline', {
+      points: pts.join(' '), fill:'none', stroke:'var(--d' + day + ')',
+      'stroke-width':2.4, 'stroke-dasharray':'7 6', 'stroke-linecap':'round', opacity:.6
+    });
+    line.setAttribute('class','route');
+    line.dataset.day = day;
+    routesG.appendChild(line);
+  });
+
+  SITES.forEach(function(s){
+    var x = px(s.lo), y = py(s.la);
+    var g = el('g', {}); g.setAttribute('class','mk'); g.dataset.day = s.d;
+
+    var t = el('title', {}); t.textContent = s.n; g.appendChild(t);
+    g.appendChild(el('circle', {cx:x.toFixed(1), cy:y.toFixed(1), r:6.5,
+      fill:'var(--d' + s.d + ')', stroke:'#3E2E1E', 'stroke-width':2}));
+
+    var lx = x, ly = y, anchor = 'middle';
+    if (s.a === 'l'){ lx = x - 12; ly = y + 4.5; anchor = 'end'; }
+    else if (s.a === 'r'){ lx = x + 12; ly = y + 4.5; anchor = 'start'; }
+    else if (s.a === 't'){ ly = y - 14; }
+    else { ly = y + 21; }
+
+    var lab = el('text', {x:lx.toFixed(1), y:ly.toFixed(1), 'text-anchor':anchor});
+    lab.setAttribute('class','mlab');
+    lab.textContent = s.n;
+    g.appendChild(lab);
+    marksG.appendChild(g);
+  });
+
+  var RESTS = [
+    {d:1,n:'Rules',la:51.5104,lo:-0.1233},
+    {d:1,n:"Simpson's in the Strand",la:51.5107,lo:-0.1206},
+    {d:1,n:'KOBA',la:51.5185,lo:-0.1355},
+    {d:1,n:'Korean Dinner Party',la:51.5131,lo:-0.1389},
+    {d:1,n:'Mayha',la:51.5192,lo:-0.1531},
+    {d:2,n:'Kioku by Endo',la:51.5056,lo:-0.1257},
+    {d:2,n:'Sushi Kanesaka',la:51.5060,lo:-0.1520},
+    {d:2,n:'Umu',la:51.5110,lo:-0.1447},
+    {d:2,n:'Bonheur by Matt Abé',la:51.5118,lo:-0.1524},
+    {d:3,n:'Sollip',la:51.5026,lo:-0.0851},
+    {d:3,n:'Trivet',la:51.5033,lo:-0.0862},
+    {d:3,n:'Restaurant Story',la:51.5032,lo:-0.0790},
+    {d:3,n:'Padella',la:51.5054,lo:-0.0913},
+    {d:4,n:'St John',la:51.5203,lo:-0.1018},
+    {d:6,n:'Dinings SW3',la:51.4957,lo:-0.1633},
+    {d:6,n:'Brooklands by Claude Bosi',la:51.5027,lo:-0.1522}
+  ];
+
+  var restsG = document.getElementById('rests');
+  RESTS.forEach(function(s){
+    var x = px(s.lo), y = py(s.la);
+    var g = el('g', {}); g.setAttribute('class','mk rest'); g.dataset.day = s.d;
+    var t = el('title', {}); t.textContent = s.n; g.appendChild(t);
+    g.appendChild(el('path', {
+      d:'M ' + x.toFixed(1) + ' ' + (y-7).toFixed(1) + ' L ' + (x+7).toFixed(1) + ' ' + y.toFixed(1) +
+        ' L ' + x.toFixed(1) + ' ' + (y+7).toFixed(1) + ' L ' + (x-7).toFixed(1) + ' ' + y.toFixed(1) + ' Z',
+      fill:'#EDE3CC', stroke:'var(--d' + s.d + ')', 'stroke-width':2.6
+    }));
+    restsG.appendChild(g);
+  });
+
+  var restBtn = document.getElementById('restToggle');
+  restBtn.addEventListener('click', function(){
+    var on = restsG.style.display === 'none';
+    restsG.style.display = on ? 'block' : 'none';
+    restBtn.textContent = on ? '收起餐廳' : '加上餐廳';
+  });
+
+  function setMapDay(day){
+    mapEl.classList.toggle('dayon', day > 0);
+    mapEl.querySelectorAll('.mk').forEach(function(m){
+      m.classList.toggle('on', day > 0 && Number(m.dataset.day) === day);
+    });
+    routesG.querySelectorAll('.route').forEach(function(r){
+      r.classList.toggle('on', day > 0 && Number(r.dataset.day) === day);
+    });
+    windsorChip.style.display = (day === 5) ? 'block' : 'none';
+  }
+
+  /* ---------- 日期切換 ---------- */
+  var dayBtns = document.querySelectorAll('.daytabs button');
+  function selectDay(day){
+    dayBtns.forEach(function(b){
+      b.setAttribute('aria-selected', Number(b.dataset.day) === day ? 'true' : 'false');
+    });
+    document.querySelectorAll('.day').forEach(function(d){
+      d.classList.toggle('is-on', Number(d.dataset.day) === day);
+    });
+    setMapDay(day);
+  }
+  dayBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){ selectDay(Number(btn.dataset.day)); });
+  });
+  document.querySelectorAll('.week tbody tr').forEach(function(row){
+    row.addEventListener('click', function(){
+      selectDay(Number(row.dataset.go));
+      document.querySelector('.mapblock').scrollIntoView({block:'start'});
+    });
+  });
+  setMapDay(0);
+
+  /* 預算計算 */
+  var boxes = document.querySelectorAll('#costlist input[type="checkbox"]');
+  var totalEl = document.getElementById('costTotal');
+  function recalc(){
+    var sum = 0;
+    boxes.forEach(function(b){ if (b.checked) sum += Number(b.dataset.price); });
+    totalEl.textContent = '£' + sum;
+  }
+  boxes.forEach(function(b){ b.addEventListener('change', recalc); });
+  recalc();
+
+  /* 倒數 */
+  function daysUntil(iso){
+    var today = new Date();
+    today.setHours(0,0,0,0);
+    var target = new Date(iso + 'T00:00:00');
+    return Math.round((target - today) / 86400000);
+  }
+  var d = daysUntil('2026-10-21');
+  var cd = document.getElementById('countdown');
+  if (d > 1) cd.textContent = '距今還有 ' + d + ' 天';
+  else if (d === 1) cd.textContent = '就是明天';
+  else if (d === 0) cd.textContent = '就是今天';
+  else cd.textContent = '已開賣，請查詢剩餘名額';
+
+  document.querySelectorAll('[data-countdown]').forEach(function(el){
+    var n = daysUntil(el.dataset.countdown);
+    el.textContent = n > 0 ? '還有 ' + n + ' 天' : '已開賣';
+  });
+})();
+</script>
+</body>
+</html>
