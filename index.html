@@ -171,6 +171,13 @@ a{color:var(--d2)}
 .week .dotcell{width:22px;padding-right:0}
 .week .dotcell i{display:inline-block;width:11px;height:11px;border-radius:50%;border:2px solid var(--line)}
 
+.must{list-style:none;margin:10px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));column-gap:22px}
+.must li{display:flex;gap:10px;align-items:baseline;padding:7px 0;border-bottom:1px solid var(--linen-3);cursor:pointer;font-size:14.5px}
+.must li:hover span{color:var(--d1)}
+.must li b{font-family:var(--display);font-size:13px;color:var(--d1);flex:0 0 22px;font-variant-numeric:tabular-nums}
+.must li span{flex:1 1 auto}
+.must li em{font-style:normal;font-family:var(--ui);font-size:12.5px;color:var(--text-soft);white-space:nowrap}
+
 /* ---------- day tabs ---------- */
 .daytabs{display:flex;gap:0;border-bottom:1px solid var(--linen-3);margin-bottom:0;overflow-x:auto}
 .daytabs button{
@@ -542,7 +549,7 @@ footer a{color:var(--gold)}
     <div><b>7</b><span>個行程日，住宿另計</span></div>
     <div><b>12</b><span>間博物館與美術館</span></div>
     <div><b>10</b><span>座教堂與座堂</span></div>
-    <div><b>12</b><span>處免費入場</span></div>
+    <div><b>15</b><span>處免費入場</span></div>
   </div>
 </header>
 
@@ -629,26 +636,45 @@ footer a{color:var(--gold)}
         <table class="week">
           <thead><tr><th></th><th style="text-align:left">日期</th><th style="text-align:left">區域</th><th style="text-align:left">當天重點</th><th style="text-align:left">步行約</th><th style="text-align:left">付費景點</th></tr></thead>
           <tbody>
-            <tr data-go="1"><td class="dotcell"><i style="background:var(--d1)"></i></td><td class="wd">週一</td><td class="wk">布倫斯伯里</td><td>大英博物館、大英圖書館、聖潘克拉斯</td><td class="wk">3.5 km</td><td class="wk">貝葉掛毯特展</td></tr>
-            <tr data-go="2"><td class="dotcell"><i style="background:var(--d2)"></i></td><td class="wd">週二</td><td class="wk">西敏</td><td>西敏寺、邱吉爾戰情室、國家美術館</td><td class="wk">3 km</td><td class="wk">西敏寺、戰情室</td></tr>
-            <tr data-go="3"><td class="dotcell"><i style="background:var(--d3)"></i></td><td class="wd">週三</td><td class="wk">倫敦塔與南岸</td><td>倫敦塔、波羅市場、南華克座堂、泰特現代</td><td class="wk">5 km</td><td class="wk">倫敦塔</td></tr>
+            <tr data-go="1"><td class="dotcell"><i style="background:var(--d1)"></i></td><td class="wd">週一</td><td class="wk">布倫斯伯里</td><td>大英博物館、大英圖書館、攝政公園</td><td class="wk">4 km＋地鐵</td><td class="wk">貝葉掛毯特展</td></tr>
+            <tr data-go="2"><td class="dotcell"><i style="background:var(--d2)"></i></td><td class="wd">週二</td><td class="wk">西敏與南岸</td><td>西敏寺、國會大廈、國家美術館、倫敦眼</td><td class="wk">4.5 km</td><td class="wk">西敏寺、戰情室、倫敦眼</td></tr>
+            <tr data-go="3"><td class="dotcell"><i style="background:var(--d3)"></i></td><td class="wd">週三</td><td class="wk">倫敦塔與南岸</td><td>倫敦塔、塔橋、波羅市場、碎片大廈</td><td class="wk">6 km</td><td class="wk">倫敦塔、碎片大廈</td></tr>
             <tr data-go="4"><td class="dotcell"><i style="background:var(--d4)"></i></td><td class="wd">週四</td><td class="wk">倫敦城與霍本</td><td>聖保羅、索恩博物館、詩班晚禱</td><td class="wk">4 km</td><td class="wk">聖保羅座堂</td></tr>
             <tr data-go="5"><td class="dotcell"><i style="background:var(--d5)"></i></td><td class="wd">週五</td><td class="wk">溫莎（圖外）</td><td>聖喬治禮拜堂、城堡國事廳、伊頓</td><td class="wk">4 km</td><td class="wk">火車＋門票（按日期查價）</td></tr>
-            <tr data-go="6"><td class="dotcell"><i style="background:var(--d6)"></i></td><td class="wd">週六</td><td class="wk">南肯辛頓</td><td>V&amp;A、自然史博物館、亞伯特紀念碑</td><td class="wk">3 km</td><td class="wk">全部免費</td></tr>
+            <tr data-go="6"><td class="dotcell"><i style="background:var(--d6)"></i></td><td class="wd">週六</td><td class="wk">南肯辛頓到白金漢宮</td><td>V&amp;A、自然史博物館、海德公園、白金漢宮</td><td class="wk">6 km</td><td class="wk">全部免費</td></tr>
             <tr data-go="7"><td class="dotcell"><i style="background:var(--d7)"></i></td><td class="wd">週日</td><td class="wk">格林威治</td><td>彩繪大廳、女王宮、皇家天文台</td><td class="wk">4 km</td><td class="wk">彩繪大廳、天文台</td></tr>
           </tbody>
         </table>
       </div>
       <p class="mapnote">點任一列看當天的完整時間表。步行距離為粗估，不含地鐵與船程。</p>
+      <h4 style="margin-top:28px">倫敦 15 個必去景點，都排進去了</h4>
+      <ol class="must">
+        <li data-go="1"><b>1</b><span>大英博物館</span><em>週一</em></li>
+        <li data-go="6"><b>2</b><span>白金漢宮（外觀）</span><em>週六</em></li>
+        <li data-go="6"><b>3</b><span>海德公園</span><em>週六</em></li>
+        <li data-go="2"><b>4</b><span>倫敦眼</span><em>週二</em></li>
+        <li data-go="2"><b>5</b><span>西敏寺</span><em>週二</em></li>
+        <li data-go="2"><b>6</b><span>大笨鐘</span><em>週二</em></li>
+        <li data-go="3"><b>7</b><span>倫敦塔橋</span><em>週三</em></li>
+        <li data-go="3"><b>8</b><span>倫敦塔</span><em>週三</em></li>
+        <li data-go="4"><b>9</b><span>聖保羅座堂</span><em>週四</em></li>
+        <li data-go="7"><b>10</b><span>格林威治天文台</span><em>週日</em></li>
+        <li data-go="3"><b>11</b><span>碎片大廈</span><em>週三晚上</em></li>
+        <li data-go="6"><b>12</b><span>自然史博物館</span><em>週六</em></li>
+        <li data-go="1"><b>13</b><span>攝政公園</span><em>週一</em></li>
+        <li data-go="2"><b>14</b><span>國家美術館</span><em>週二</em></li>
+        <li data-go="2"><b>15</b><span>國會大廈</span><em>週二</em></li>
+      </ol>
+      <p class="mapnote">大笨鐘在國會大廈北端，兩個一站看完。點任一項跳到那一天。</p>
     </section>
 
     <!-- Day 1 -->
     <section class="day" data-day="1" style="--dot:var(--d1)">
       <div class="dayhead">
         <span class="daynum" style="color:var(--d1)">第一天・週一</span>
-        <span class="dayarea">布倫斯伯里與國王十字　步行為主</span>
+        <span class="dayarea">布倫斯伯里、國王十字與攝政公園　步行加兩站地鐵</span>
       </div>
-      <p class="daywhy">從全世界最大的百科全書式博物館開場。下午走到大英圖書館，看大憲章與古騰堡聖經；博物館常設展和圖書館寶藏廳免費，貝葉掛毯特展則須另外買票。兩處都要挑重點，不用勉強看完。</p>
+      <p class="daywhy">從全世界最大的百科全書式博物館開場。下午走到大英圖書館，看大憲章與古騰堡聖經；博物館常設展和圖書館寶藏廳免費，貝葉掛毯特展則須另外買票。兩處都要挑重點，不用勉強看完。傍晚搭兩站地鐵到攝政公園，五、六月正是玫瑰季。</p>
       <ul class="tl">
         <li><span class="t">10:00</span><span class="stem"></span><span class="body">
           <span class="name">大英博物館<span class="en">British Museum</span><span class="free">常設展免費</span></span>
@@ -658,13 +684,17 @@ footer a{color:var(--gold)}
           <span class="name">大英圖書館寶藏廳<span class="en">Treasures Gallery</span><span class="free">免費</span></span>
           <span class="note">大憲章、《貝武夫》手稿、莎士比亞第一對開本、達文西筆記、披頭四手寫歌詞，全在同一個展廳。廳內刻意偏暗偏涼，建議多帶一件外套。</span>
         </span></li>
-        <li><span class="t">16:00</span><span class="stem"></span><span class="body">
+        <li><span class="t">15:45</span><span class="stem"></span><span class="body">
           <span class="name">聖潘克拉斯車站<span class="en">St Pancras</span><span class="free">免費</span></span>
           <span class="note">1873 年落成的維多利亞哥德式紅磚傑作，就在圖書館對街。上二樓看拱頂與大時鐘，順道喝杯東西。</span>
         </span></li>
-        <li><span class="t">18:30</span><span class="stem"></span><span class="body">
-          <span class="name">柯芬園<span class="en">Covent Garden</span></span>
-          <span class="note">晚餐與街頭表演。想看西區音樂劇的話，這一帶的劇院最集中，記得提前訂位。</span>
+        <li><span class="t">16:30</span><span class="stem"></span><span class="body">
+          <span class="name">攝政公園與瑪麗王后花園<span class="en">Regent's Park</span><span class="free">免費</span></span>
+          <span class="note">從 King's Cross St Pancras 搭 Circle、Hammersmith &amp; City 或 Metropolitan 線兩站到 Great Portland Street，走幾分鐘就到。園內的瑪麗王后花園是倫敦最大的玫瑰園，有 85 個單一品種花床；官方建議六月上半月來看最盛，五月去也看得到部分花開。旁邊有划船湖，夏季晚上還有露天劇場演出，可另外訂票。</span>
+        </span></li>
+        <li><span class="t">19:00</span><span class="stem"></span><span class="body">
+          <span class="name">晚餐：馬里波恩或費茲羅維亞<span class="en">Marylebone</span></span>
+          <span class="note">公園南邊走路可到。Mayha 的木檯 omakase，或 KOBA 的韓式烤肉，詳見餐廳頁。</span>
         </span></li>
       </ul>
       <div class="tip"><b>提醒</b>：大英博物館每天開放，週五延長到 20:30，所以這天可以和其他天對調，配合搶到的掛毯場次。</div>
@@ -674,9 +704,9 @@ footer a{color:var(--gold)}
     <section class="day" data-day="2" style="--dot:var(--d2)">
       <div class="dayhead">
         <span class="daynum" style="color:var(--d2)">第二天・週二</span>
-        <span class="dayarea">西敏與白廳　全程步行</span>
+        <span class="dayarea">西敏、白廳與南岸　全程步行</span>
       </div>
-      <p class="daywhy">一天之內走完英國的加冕教堂、國會、二戰指揮中樞與國家美術館，彼此都在十分鐘腳程內。西敏寺開門就進去，人最少。</p>
+      <p class="daywhy">一天之內走完英國的加冕教堂、國會、二戰指揮中樞與國家美術館，彼此都在十分鐘腳程內。西敏寺開門就進去，人最少。傍晚過河搭倫敦眼，再回柯芬園吃晚餐。</p>
       <ul class="tl">
         <li><span class="t">09:30</span><span class="stem"></span><span class="body">
           <span class="name">西敏寺<span class="en">Westminster Abbey</span></span>
@@ -695,15 +725,23 @@ footer a{color:var(--gold)}
           <span class="note">下午四點的下馬衛兵儀式，比白金漢宮前的交接安靜許多，也看得更近。時間以現場公告為準。</span>
         </span></li>
         <li><span class="t">16:15</span><span class="stem"></span><span class="body">
+          <span class="name">聖馬田教堂<span class="en">St Martin-in-the-Fields</span><span class="free">免費</span></span>
+          <span class="note">特拉法加廣場邊的教堂，進去看一眼，十分鐘就好。地窖有一間咖啡館；晚上常有燭光古典音樂會，想聽可以另挑一晚。</span>
+        </span></li>
+        <li><span class="t">16:30</span><span class="stem"></span><span class="body">
           <span class="name">國家美術館<span class="en">National Gallery</span><span class="free">免費</span></span>
           <span class="note">18:00 閉館，時間不多，就挑梵谷〈向日葵〉、透納〈戰艦無畏號〉、范艾克〈阿爾諾非尼夫婦〉這條線走。部分展廳整修中，在意哪幅畫就先上官網查位置。</span>
         </span></li>
-        <li><span class="t">19:00</span><span class="stem"></span><span class="body">
-          <span class="name">聖馬田教堂<span class="en">St Martin-in-the-Fields</span></span>
-          <span class="note">可選。特拉法加廣場邊的教堂，晚上常有燭光古典音樂會，地窖還有一間咖啡館。</span>
+        <li><span class="t">18:15</span><span class="stem"></span><span class="body">
+          <span class="name">倫敦眼<span class="en">London Eye</span></span>
+          <span class="note">國家美術館關門後，走 Golden Jubilee 步行橋過河約十五分鐘。五到九月開到 20:30，閉館前 30 至 45 分鐘停止入場，所以訂 18:30 前後的時段。票上的時間是開始排隊的時間，不是登艙時間；轉一圈 30 分鐘，連排隊約一小時。網上買比現場便宜。</span>
+        </span></li>
+        <li><span class="t">20:00</span><span class="stem"></span><span class="body">
+          <span class="name">柯芬園晚餐<span class="en">Covent Garden</span></span>
+          <span class="note">走回河北岸約十五分鐘。Rules、Simpson's in the Strand 都在這一帶，西區劇院也集中在這裡。</span>
         </span></li>
       </ul>
-      <div class="tip"><b>想看衛兵交接？</b>國王衛隊通常在週一、三、五 11:00 交接（週日 10:00）。若非看不可，把這天和週三對調：早上先去白金漢宮看交接，下午再進西敏寺。時程偶爾會因天候或典禮取消。</div>
+      <div class="tip"><b>想看衛兵交接？</b>白金漢宮排在第六天傍晚，但週六沒有交接儀式。國王衛隊通常在週一、三、五 11:00 交接（週日 10:00）；若非看不可，把這天和週三對調：早上先去白金漢宮看交接，下午再進西敏寺。時程偶爾會因天候或典禮取消。</div>
     </section>
 
     <!-- Day 3 -->
@@ -712,7 +750,7 @@ footer a{color:var(--gold)}
         <span class="daynum" style="color:var(--d3)">第三天・週三</span>
         <span class="dayarea">倫敦塔與南岸　過橋步行</span>
       </div>
-      <p class="daywhy">上午給近千年的城堡、監獄與鑄幣廠，下午過河走南岸：市場、座堂、環球劇場、發電廠改成的美術館。</p>
+      <p class="daywhy">上午給近千年的城堡、監獄與鑄幣廠，下午過河走南岸：市場、座堂、環球劇場、發電廠改成的美術館。晚上上碎片大廈看日落。</p>
       <ul class="tl">
         <li><span class="t">09:00</span><span class="stem"></span><span class="body">
           <span class="name">倫敦塔<span class="en">Tower of London</span></span>
@@ -740,7 +778,11 @@ footer a{color:var(--gold)}
         </span></li>
         <li><span class="t">16:30</span><span class="stem"></span><span class="body">
           <span class="name">泰特現代美術館<span class="en">Tate Modern</span><span class="free">免費</span></span>
-          <span class="note">發電廠改建，渦輪大廳本身就值得一看。離開時走千禧橋過河，正對聖保羅穹頂——這是全倫敦最好的一段步行路線。</span>
+          <span class="note">發電廠改建，渦輪大廳本身就值得一看。出館後先上千禧橋，正對聖保羅穹頂；再沿南岸往東走回倫敦橋，約二十分鐘。</span>
+        </span></li>
+        <li><span class="t">20:00</span><span class="stem"></span><span class="body">
+          <span class="name">碎片大廈<span class="en">The View from The Shard</span></span>
+          <span class="note">英國最高的建築，310 公尺。觀景台在 68、69 樓室內與 72 樓露天，上去後不限時間。夏季約開到 22:00，最後入場是閉館前一小時。五、六月日落大約晚上八點半到九點二十，訂 20:00 前後的時段，可以從白天看到亮燈；日落時段最搶手，要提早訂。Sollip、Trivet、Restaurant Story 都在旁邊，晚餐可以排在前後。</span>
         </span></li>
       </ul>
       <div class="tip"><b>提醒</b>：倫敦塔週二至週六 09:00 開門，週日與週一 10:00。門票含皇冠珠寶與所有展區，裡面不會再收費。</div>
@@ -844,9 +886,9 @@ footer a{color:var(--gold)}
     <section class="day" data-day="6" style="--dot:var(--d6)">
       <div class="dayhead">
         <span class="daynum" style="color:var(--d6)">第六天・週六</span>
-        <span class="dayarea">南肯辛頓　全程步行</span>
+        <span class="dayarea">南肯辛頓、海德公園到白金漢宮　全程步行</span>
       </div>
-      <p class="daywhy">1851 年萬國博覽會的盈餘，蓋出了這一整片博物館區。三館相連、全部免費，一天絕對看不完，所以只挑想看的。</p>
+      <p class="daywhy">1851 年萬國博覽會的盈餘，蓋出了這一整片博物館區。三館相連、全部免費，一天絕對看不完，所以只挑想看的。傍晚穿過海德公園，一路走到白金漢宮。</p>
       <ul class="tl">
         <li><span class="t">10:00</span><span class="stem"></span><span class="body">
           <span class="name">V&amp;A 博物館<span class="en">Victoria and Albert Museum</span><span class="free">免費</span></span>
@@ -871,6 +913,14 @@ footer a{color:var(--gold)}
         <li><span class="t">16:15</span><span class="stem"></span><span class="body">
           <span class="name">肯辛頓宮<span class="en">Kensington Palace</span></span>
           <span class="note">可選。維多利亞女王的出生地與成長之處，也是黛安娜王妃的故居；花園裡有她的銅像。</span>
+        </span></li>
+        <li><span class="t">17:15</span><span class="stem"></span><span class="body">
+          <span class="name">海德公園<span class="en">Hyde Park</span><span class="free">免費</span></span>
+          <span class="note">從肯辛頓花園往東走進海德公園，沿蛇形湖經過黛安娜王妃紀念噴泉，一路走到海德公園角，約三十分鐘。天氣好可以租躺椅或划船。</span>
+        </span></li>
+        <li><span class="t">18:15</span><span class="stem"></span><span class="body">
+          <span class="name">白金漢宮<span class="en">Buckingham Palace</span><span class="free">外觀免費</span></span>
+          <span class="note">從海德公園角沿 Constitution Hill 走十分鐘，就到宮前的維多利亞紀念碑。國事廳五、六月不開放，這趟看外觀與站崗的衛兵；週六沒有交接儀式。傍晚人少、光線好，適合拍照。晚餐回海德公園角的 Brooklands，或往梅費爾。</span>
         </span></li>
       </ul>
       <div class="tip"><b>提醒</b>：肯辛頓宮週一、週二休館；女王寓所（Queen's State Apartments）自 2026 年 6 月 15 日起關閉整修，五、六月到訪時可能仍未完工，訂票前先確認開放範圍。想去諾丁丘的波多貝羅市集，週六早上是最熱鬧的時候，可以換到這天開場。</div>
@@ -930,6 +980,8 @@ footer a{color:var(--gold)}
       <tr><th>國家美術館</th><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td style="text-align:left">10:00–18:00，週五至 21:00</td></tr>
       <tr><th>V&amp;A／自然史博物館</th><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td style="text-align:left">每日開放，免費</td></tr>
       <tr><th>泰特現代美術館</th><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td style="text-align:left">每日開放，免費</td></tr>
+      <tr><th>倫敦眼</th><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td style="text-align:left">五至九月約 10:00–20:30，閉館前 30–45 分鐘停止入場</td></tr>
+      <tr><th>碎片大廈觀景台</th><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td style="text-align:left">夏季約開到 22:00，最後入場為閉館前一小時</td></tr>
       <tr><th>西敏寺</th><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="l">◐</td><td class="x">○</td><td style="text-align:left">週六提早關，週日僅禮拜</td></tr>
       <tr><th>聖保羅座堂</th><td class="o">●</td><td class="o">●</td><td class="l">◐</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="x">○</td><td style="text-align:left">週三 10:00 才開，週日僅禮拜</td></tr>
       <tr><th>倫敦塔</th><td class="l">◐</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="l">◐</td><td style="text-align:left">週日、一 10:00 才開</td></tr>
@@ -937,7 +989,7 @@ footer a{color:var(--gold)}
       <tr><th>聖喬治禮拜堂</th><td class="o">●</td><td class="x">○</td><td class="x">○</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="x">○</td><td style="text-align:left">16:00 關，比城堡早</td></tr>
       <tr><th>索恩爵士博物館</th><td class="x">○</td><td class="x">○</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td style="text-align:left">週一、二休館；國定假日週一開放</td></tr>
       <tr><th>肯辛頓宮</th><td class="x">○</td><td class="x">○</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td style="text-align:left">週一、二休館</td></tr>
-      <tr><th>白金漢宮國事廳</th><td class="x">○</td><td class="x">○</td><td class="x">○</td><td class="x">○</td><td class="x">○</td><td class="x">○</td><td class="x">○</td><td style="text-align:left">僅七至九月開放，五、六月看不到</td></tr>
+      <tr><th>白金漢宮國事廳</th><td class="x">○</td><td class="x">○</td><td class="x">○</td><td class="x">○</td><td class="x">○</td><td class="x">○</td><td class="x">○</td><td style="text-align:left">國事廳僅七至九月開放；外觀隨時可看</td></tr>
       <tr><th>衛兵交接</th><td class="o">●</td><td class="x">○</td><td class="o">●</td><td class="x">○</td><td class="o">●</td><td class="x">○</td><td class="l">◐</td><td style="text-align:left">一、三、五 11:00；週日 10:00</td></tr>
       <tr><th>聖保羅詩班晚禱</th><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="o">●</td><td class="l">◐</td><td style="text-align:left">平日與週六 17:00，免費；週日時間另訂</td></tr>
     </tbody>
@@ -959,6 +1011,8 @@ footer a{color:var(--gold)}
     <li><input type="checkbox" id="c4" data-price="27" checked><label for="c4">聖保羅座堂（含穹頂與地窖）</label><span class="p">£27</span></li>
     <li><input type="checkbox" id="c5" data-price="32" checked><label for="c5">溫莎城堡（線上預訂價）</label><span class="p">£32</span></li>
     <li><input type="checkbox" id="c6" data-price="20"><label for="c6">肯辛頓宮</label><span class="p">£20</span></li>
+    <li><input type="checkbox" id="c9" data-price="33" checked><label for="c9">倫敦眼（網上標準票，動態定價約 £29–39）</label><span class="p">約 £33</span></li>
+    <li><input type="checkbox" id="c10" data-price="24" checked><label for="c10">碎片大廈觀景台（日落時段較貴）</label><span class="p">£24 起</span></li>
     <li><input type="checkbox" id="c8" data-price="20"><label for="c8">UK ETA 電子旅行許可（如適用，每人一次）</label><span class="p">£20</span></li>
   </ul>
   <div class="total"><span>已勾選項目小計（未計餐飲、住宿及其他景點）</span><b id="costTotal">£0</b></div>
@@ -980,6 +1034,7 @@ footer a{color:var(--gold)}
     <li>女王宮與國家海事博物館</li>
     <li>聖保羅詩班晚禱</li>
     <li>衛兵交接與騎兵衛隊儀式</li>
+    <li>攝政公園、海德公園與白金漢宮外觀</li>
     <li>萬聖堂、南華克座堂、布朗普頓祈禱堂</li>
   </ul>
   <p style="margin-top:14px">免費的館所多半接受自由捐款，通常建議 £5 上下，隨意。</p>
@@ -994,12 +1049,12 @@ footer a{color:var(--gold)}
     <table class="pair">
       <thead><tr><th style="text-align:left">日期</th><th style="text-align:left">午餐</th><th style="text-align:left">晚餐</th></tr></thead>
       <tbody>
-        <tr><td>週一</td><td>博物館餐廳或羅素廣場一帶</td><td>Rules（柯芬園，走路 5 分鐘）</td></tr>
-        <tr><td>週二</td><td>議會廣場周邊</td><td>Kioku by Endo 或 Simpson's in the Strand</td></tr>
-        <tr><td>週三</td><td>波羅市場現吃，或排 Padella</td><td>Sollip、Trivet、Restaurant Story 都在倫敦橋站旁</td></tr>
+        <tr><td>週一</td><td>博物館餐廳或羅素廣場一帶</td><td>Mayha 或 KOBA（攝政公園南邊）</td></tr>
+        <tr><td>週二</td><td>議會廣場周邊</td><td>Rules 或 Simpson's in the Strand（倫敦眼後走回柯芬園）</td></tr>
+        <tr><td>週三</td><td>波羅市場現吃，或排 Padella</td><td>Sollip、Trivet、Restaurant Story，排在碎片大廈前後</td></tr>
         <tr><td>週四</td><td>St John（就在倫敦博物館對面）</td><td>晚禱後留在城區，或往柯芬園</td></tr>
         <tr><td>週五</td><td>溫莎鎮或伊頓 High Street</td><td>回市區後隨意</td></tr>
-        <tr><td>週六</td><td>V&amp;A 莫里斯廳咖啡廳</td><td>Dinings SW3 或 Brooklands</td></tr>
+        <tr><td>週六</td><td>V&amp;A 莫里斯廳咖啡廳</td><td>Brooklands（海德公園角），或 Park Lane 的 Sushi Kanesaka</td></tr>
         <tr><td>週日</td><td>格林威治市集攤位</td><td>搭船回市區；星級餐廳週日多半休息</td></tr>
       </tbody>
     </table>
@@ -1009,23 +1064,23 @@ footer a{color:var(--gold)}
   <div class="foodgrid">
     <article>
       <h5>Kioku by Endo<em>The OWO 頂樓，白廳</em></h5>
-      <p class="meta"><span class="band">££££</span><span class="tag">第二天</span><span class="star">主廚為米其林星級</span></p>
-      <p>Endo Kazutoshi 的屋頂餐廳，露台俯瞰白廳與騎兵衛隊閱兵場。就在 Raffles 那棟樓裡，第二天走完行程抬頭就到。週日到週二不營業，晚餐開到很晚。</p>
+      <p class="meta"><span class="band">££££</span><span class="tag">週三至週六</span><span class="star">主廚為米其林星級</span></p>
+      <p>Endo Kazutoshi 的屋頂餐廳，露台俯瞰白廳與騎兵衛隊閱兵場。就在 Raffles 那棟樓裡，西敏一帶走完抬頭就到。週日到週二不營業，所以要挑週三到週六的晚上；晚餐開到很晚。</p>
     </article>
     <article>
       <h5>Sushi Kanesaka<em>45 Park Lane，梅費爾</em></h5>
-      <p class="meta"><span class="band">££££</span><span class="tag">任一晚</span><span class="star">★ 一星</span></p>
-      <p>東京銀座金坂的倫敦店，江戶前握壽司，靠熟成與醃漬帶出風味而非一味求鮮。開幕七個月就摘星，檯前不到十二個座位，價位是全倫敦最高的一級。</p>
+      <p class="meta"><span class="band">££££</span><span class="tag">第六天</span><span class="star">★ 一星</span></p>
+      <p>東京銀座金坂的倫敦店，江戶前握壽司，靠熟成與醃漬帶出風味而非一味求鮮。開幕七個月就摘星，檯前不到十二個座位，價位是全倫敦最高的一級。就在海德公園東側，第六天傍晚順路。</p>
     </article>
     <article>
       <h5>Umu<em>梅費爾</em></h5>
-      <p class="meta"><span class="band">££££</span><span class="tag">任一晚</span><span class="star">★ 一星</span></p>
+      <p class="meta"><span class="band">££££</span><span class="tag">第六天或任一晚</span><span class="star">★ 一星</span></p>
       <p>京都懷石路線，開了二十多年仍是倫敦日本料理的標竿。Time Out 把它選為壽司類「米其林等級」的代表。</p>
     </article>
     <article>
       <h5>Mayha<em>馬里波恩</em></h5>
       <p class="meta"><span class="band">£££</span><span class="tag">第一天</span><span class="star">米其林指南推薦</span></p>
-      <p>十一人的木檯 omakase。午餐每人約 £100 起、晚餐 £180，比上面幾家實際得多，樓下還有一間雞尾酒吧。從大英博物館走過去約二十分鐘。</p>
+      <p>十一人的木檯 omakase。午餐每人約 £100 起、晚餐 £180，比上面幾家實際得多，樓下還有一間雞尾酒吧。逛完攝政公園的玫瑰園走過去約十五分鐘。</p>
     </article>
     <article>
       <h5>Dinings SW3<em>騎士橋與切爾西交界</em></h5>
@@ -1049,7 +1104,7 @@ footer a{color:var(--gold)}
     <article>
       <h5>KOBA<em>費茲羅維亞，蘇活北側</em></h5>
       <p class="meta"><span class="band">££</span><span class="tag">第一天</span></p>
-      <p>桌上炭烤，常被說是蘇活一帶最好的韓國餐廳。藍色大理石桌配天窗，除了烤肉還有鍋物與麵。從大英博物館走過去約十五分鐘，第一天晚上順路。</p>
+      <p>桌上炭烤，常被說是蘇活一帶最好的韓國餐廳。藍色大理石桌配天窗，除了烤肉還有鍋物與麵。從攝政公園走過去約二十分鐘，第一天晚上順路。</p>
     </article>
     <article>
       <h5>Korean Dinner Party<em>蘇活 Kingly Court 頂樓</em></h5>
@@ -1067,12 +1122,12 @@ footer a{color:var(--gold)}
   <div class="foodgrid">
     <article>
       <h5>Rules<em>柯芬園 Maiden Lane</em></h5>
-      <p class="meta"><span class="band">£££</span><span class="tag">第一天</span></p>
+      <p class="meta"><span class="band">£££</span><span class="tag">第二天</span></p>
       <p>1798 年開業，倫敦最古老的餐廳，兩百多年來只換過五位主人。專做野味，賣得比全英國任何一家餐廳都多。窗上金字寫著生蠔、派、布丁三個字；牆上掛滿老主顧的畫像，狄更斯、卓別林、伊莉莎白二世都來過。</p>
     </article>
     <article>
       <h5>Simpson's in the Strand<em>Strand 100 號</em></h5>
-      <p class="meta"><span class="band">£££</span><span class="tag">第一、二天</span></p>
+      <p class="meta"><span class="band">£££</span><span class="tag">第二天</span></p>
       <p>1828 年以咖啡館兼西洋棋室起家，1904 年遷到現址，1974 年是英國最早摘星的餐廳之一。疫情後關了六年，2026 年 3 月由 Jeremy King 重新開幕：英式烤肉配銀製推車現切回來了。Grand Divan 走傳統路線，Green Room 價位親民些。</p>
     </article>
     <article>
@@ -1101,13 +1156,13 @@ footer a{color:var(--gold)}
     </article>
     <article>
       <h5>Bonheur by Matt Abé<em>梅費爾 Upper Brook Street</em></h5>
-      <p class="meta"><span class="band">££££</span><span class="tag">任一晚</span><span class="star">★★ 二星</span></p>
+      <p class="meta"><span class="band">££££</span><span class="tag">第六天或任一晚</span><span class="star">★★ 二星</span></p>
       <p>2026 年最大的話題：開幕才幾個月就直接拿下二星。地址是傳奇的 Le Gavroche 舊址，主廚在 Gordon Ramsay 集團待了十八年才自立門戶。除了套餐也有三道式選擇。</p>
     </article>
     <article>
       <h5>Brooklands by Claude Bosi<em>海德公園角 Peninsula 頂樓</em></h5>
       <p class="meta"><span class="band">££££</span><span class="tag">第六天</span><span class="star">★★ 二星</span></p>
-      <p>在飯店頂樓，整面窗俯瞰西倫敦。第六天從亞伯特紀念碑沿海德公園南緣走過去約二十五分鐘，或搭一站地鐵。</p>
+      <p>在飯店頂樓，整面窗俯瞰西倫敦。第六天穿過海德公園就走到門口，看完白金漢宮往回走十分鐘。</p>
     </article>
   </div>
 
@@ -1203,7 +1258,7 @@ footer a{color:var(--gold)}
     <li><span class="d">2027 年 1 月起（日期待公布）</span><span class="w">貝葉掛毯 4–7 月場次開賣，五、六月的票就在這一批。會員約 1 月優先訂，公眾稍晚；先訂閱大英博物館電子報。</span><span class="c">待公布</span></li>
     <li><span class="d">訂機票前</span><span class="w">先按護照與居留身分查是否需要 UK ETA 或簽證；如須申請 ETA，至少預留 3 個工作天，並等核准後再出發。</span><span class="c">先查資格</span></li>
     <li><span class="d">2027 年 3 月下旬前</span><span class="w">國王壽辰閱兵的看台座位採抽籤，2026 年的截止日是 3 月 27 日。想坐看台就在這之前報名；前兩個週六的預演另有售票。</span><span class="c">可選</span></li>
-    <li><span class="d">2027 年 3–4 月</span><span class="w">訂倫敦塔、西敏寺、聖保羅、溫莎城堡的時段票，以及西區劇院；二星餐廳也差不多在這時開放五、六月的訂位。</span><span class="c">建議</span></li>
+    <li><span class="d">2027 年 3–4 月</span><span class="w">訂倫敦塔、西敏寺、聖保羅、溫莎城堡的時段票，倫敦眼與碎片大廈的傍晚時段，以及西區劇院；二星餐廳也差不多在這時開放五、六月的訂位。</span><span class="c">建議</span></li>
     <li><span class="d">2027 年 5 月 3 日、5 月 31 日</span><span class="w">兩個五月的銀行假日（週一），景點人較多，部分開放時間會調整。5 月 31 日那一週多數學校放 half-term，博物館會很擠，可以的話避開。</span><span class="c">避開</span></li>
     <li><span class="d">2027 年 5 月 18–22 日</span><span class="w">雀兒喜花展。頭兩天只限 RHS 會員，後三天開放公眾；愛園藝就配合這幾天。</span><span class="c">可配合</span></li>
     <li><span class="d">2027 年 6 月中某週六</span><span class="w">國王壽辰閱兵，日期未公布，通常在六月中旬的週六。當天林蔭大道與騎兵衛隊閱兵場封閉，前兩個週六是預演。行程裡的週六在南肯辛頓不受影響；平移星期別時，別把西敏那天排到這幾個週六。</span><span class="c">留意</span></li>
@@ -1299,21 +1354,24 @@ footer a{color:var(--gold)}
     {d:1,n:'大英博物館',la:51.5194,lo:-0.1270,a:'l'},
     {d:1,n:'大英圖書館',la:51.5299,lo:-0.1276,a:'l'},
     {d:1,n:'聖潘克拉斯車站',la:51.5308,lo:-0.1257,a:'r'},
-    {d:1,n:'柯芬園',la:51.5117,lo:-0.1240,a:'r'},
+    {d:1,n:'攝政公園玫瑰園',la:51.5268,lo:-0.1527,a:'b'},
 
     {d:2,n:'西敏寺',la:51.4994,lo:-0.1273,a:'l'},
     {d:2,n:'國會大廈與大笨鐘',la:51.4995,lo:-0.1246,a:'r'},
     {d:2,n:'邱吉爾戰情室',la:51.5021,lo:-0.1291,a:'l'},
-    {d:2,n:'騎兵衛隊閱兵場',la:51.5044,lo:-0.1265,a:'r'},
-    {d:2,n:'國家美術館',la:51.5089,lo:-0.1283,a:'l'},
+    {d:2,n:'騎兵衛隊閱兵場',la:51.5044,lo:-0.1265,a:'l'},
     {d:2,n:'聖馬田教堂',la:51.5088,lo:-0.1263,a:'r'},
+    {d:2,n:'國家美術館',la:51.5089,lo:-0.1283,a:'l'},
+    {d:2,n:'倫敦眼',la:51.5033,lo:-0.1190,a:'r'},
+    {d:2,n:'柯芬園',la:51.5117,lo:-0.1240,a:'r'},
 
     {d:3,n:'倫敦塔',la:51.5081,lo:-0.0759,a:'r'},
     {d:3,n:'萬聖堂',la:51.5095,lo:-0.0782,a:'t'},
     {d:3,n:'倫敦塔橋',la:51.5055,lo:-0.0754,a:'r'},
-    {d:3,n:'波羅市場與南華克座堂',la:51.5057,lo:-0.0905,a:'b'},
+    {d:3,n:'波羅市場與南華克座堂',la:51.5057,lo:-0.0905,a:'l'},
     {d:3,n:'環球劇場',la:51.5081,lo:-0.0972,a:'t'},
     {d:3,n:'泰特現代美術館',la:51.5076,lo:-0.0994,a:'l'},
+    {d:3,n:'碎片大廈',la:51.5045,lo:-0.0865,a:'b'},
 
     {d:4,n:'聖保羅座堂',la:51.5138,lo:-0.0984,a:'r'},
     {d:4,n:'大聖巴多羅買堂',la:51.5190,lo:-0.0999,a:'r'},
@@ -1326,6 +1384,8 @@ footer a{color:var(--gold)}
     {d:6,n:'自然史博物館',la:51.4967,lo:-0.1764,a:'t'},
     {d:6,n:'亞伯特紀念碑',la:51.5024,lo:-0.1778,a:'l'},
     {d:6,n:'肯辛頓宮',la:51.5050,lo:-0.1877,a:'t'},
+    {d:6,n:'海德公園',la:51.5053,lo:-0.1665,a:'b'},
+    {d:6,n:'白金漢宮',la:51.5014,lo:-0.1419,a:'b'},
 
     {d:7,n:'彩繪大廳',la:51.4829,lo:-0.0075,a:'r'},
     {d:7,n:'女王宮與海事博物館',la:51.4812,lo:-0.0055,a:'b'},
@@ -1378,15 +1438,15 @@ footer a{color:var(--gold)}
   });
 
   var RESTS = [
-    {d:1,n:'Rules',la:51.5104,lo:-0.1233},
-    {d:1,n:"Simpson's in the Strand",la:51.5107,lo:-0.1206},
+    {d:2,n:'Rules',la:51.5104,lo:-0.1233},
+    {d:2,n:"Simpson's in the Strand",la:51.5107,lo:-0.1206},
     {d:1,n:'KOBA',la:51.5185,lo:-0.1355},
     {d:1,n:'Korean Dinner Party',la:51.5131,lo:-0.1389},
     {d:1,n:'Mayha',la:51.5192,lo:-0.1531},
     {d:2,n:'Kioku by Endo',la:51.5056,lo:-0.1257},
-    {d:2,n:'Sushi Kanesaka',la:51.5060,lo:-0.1520},
-    {d:2,n:'Umu',la:51.5110,lo:-0.1447},
-    {d:2,n:'Bonheur by Matt Abé',la:51.5118,lo:-0.1524},
+    {d:6,n:'Sushi Kanesaka',la:51.5060,lo:-0.1520},
+    {d:6,n:'Umu',la:51.5110,lo:-0.1447},
+    {d:6,n:'Bonheur by Matt Abé',la:51.5118,lo:-0.1524},
     {d:3,n:'Sollip',la:51.5026,lo:-0.0851},
     {d:3,n:'Trivet',la:51.5033,lo:-0.0862},
     {d:3,n:'Restaurant Story',la:51.5032,lo:-0.0790},
@@ -1441,7 +1501,7 @@ footer a{color:var(--gold)}
   dayBtns.forEach(function(btn){
     btn.addEventListener('click', function(){ selectDay(Number(btn.dataset.day)); });
   });
-  document.querySelectorAll('.week tbody tr').forEach(function(row){
+  document.querySelectorAll('.week tbody tr, .must li').forEach(function(row){
     row.addEventListener('click', function(){
       selectDay(Number(row.dataset.go));
       document.querySelector('.mapblock').scrollIntoView({block:'start'});
